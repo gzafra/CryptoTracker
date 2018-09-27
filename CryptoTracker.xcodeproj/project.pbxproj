@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B654E917215D1E6C00A24BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E916215D1E6C00A24BD3 /* AppDelegate.swift */; };
-		B654E919215D1E6C00A24BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E918215D1E6C00A24BD3 /* ViewController.swift */; };
-		B654E91C215D1E6C00A24BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B654E91A215D1E6C00A24BD3 /* Main.storyboard */; };
+		B654E91C215D1E6C00A24BD3 /* Rates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B654E91A215D1E6C00A24BD3 /* Rates.storyboard */; };
 		B654E91E215D1E6E00A24BD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B654E91D215D1E6E00A24BD3 /* Assets.xcassets */; };
 		B654E921215D1E6E00A24BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B654E91F215D1E6E00A24BD3 /* LaunchScreen.storyboard */; };
 		B654E92C215D1E6E00A24BD3 /* CryptoTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E92B215D1E6E00A24BD3 /* CryptoTrackerTests.swift */; };
@@ -20,12 +19,20 @@
 		B654E942215D261E00A24BD3 /* CoinDeskEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */; };
 		B654E944215D2AB200A24BD3 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E943215D2AB200A24BD3 /* ResultError.swift */; };
 		B654E946215D2FB700A24BD3 /* HTTPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E945215D2FB700A24BD3 /* HTTPCode.swift */; };
-		B654E948215D33C900A24BD3 /* CoinDeskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* CoinDeskInteractor.swift */; };
-		B654E94A215D457400A24BD3 /* CoinDeskRealTimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E949215D457400A24BD3 /* CoinDeskRealTimeRequest.swift */; };
-		B654E94C215D45C600A24BD3 /* CoinDeskRealTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94B215D45C600A24BD3 /* CoinDeskRealTimeData.swift */; };
-		B654E94F215D47BA00A24BD3 /* CoinDeskHistoricalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94E215D47BA00A24BD3 /* CoinDeskHistoricalRequest.swift */; };
-		B654E951215D47D400A24BD3 /* CoinDeskHistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E950215D47D400A24BD3 /* CoinDeskHistoricalData.swift */; };
+		B654E948215D33C900A24BD3 /* RatesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* RatesInteractor.swift */; };
+		B654E94A215D457400A24BD3 /* RatesRealTimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E949215D457400A24BD3 /* RatesRealTimeRequest.swift */; };
+		B654E94C215D45C600A24BD3 /* RatesRealTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */; };
+		B654E94F215D47BA00A24BD3 /* RatesHistoricalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */; };
+		B654E951215D47D400A24BD3 /* RatesHistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */; };
 		B654E955215D498600A24BD3 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateExtensions.swift */; };
+		B654E957215D4D4200A24BD3 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
+		B654E95A215D528300A24BD3 /* RatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E959215D528300A24BD3 /* RatesTVC.swift */; };
+		B654E95C215D53C500A24BD3 /* HistorialRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E95B215D53C500A24BD3 /* HistorialRateCell.swift */; };
+		B654E95F215D53FB00A24BD3 /* RatesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E95E215D53FB00A24BD3 /* RatesPresenter.swift */; };
+		B654E961215D540D00A24BD3 /* RatesViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E960215D540D00A24BD3 /* RatesViewModels.swift */; };
+		B654E964215D5FE000A24BD3 /* CurrencyFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */; };
+		B654E967215D6BCC00A24BD3 /* RatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E966215D6BCC00A24BD3 /* RatesRouter.swift */; };
+		B654E96A215D766300A24BD3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E969215D766300A24BD3 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +48,7 @@
 /* Begin PBXFileReference section */
 		B654E913215D1E6C00A24BD3 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B654E916215D1E6C00A24BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B654E918215D1E6C00A24BD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B654E91B215D1E6C00A24BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B654E91B215D1E6C00A24BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Rates.storyboard; sourceTree = "<group>"; };
 		B654E91D215D1E6E00A24BD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B654E920215D1E6E00A24BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B654E922215D1E6E00A24BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,12 +62,20 @@
 		B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskEndpoints.swift; sourceTree = "<group>"; };
 		B654E943215D2AB200A24BD3 /* ResultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
 		B654E945215D2FB700A24BD3 /* HTTPCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPCode.swift; sourceTree = "<group>"; };
-		B654E947215D33C900A24BD3 /* CoinDeskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskInteractor.swift; sourceTree = "<group>"; };
-		B654E949215D457400A24BD3 /* CoinDeskRealTimeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskRealTimeRequest.swift; sourceTree = "<group>"; };
-		B654E94B215D45C600A24BD3 /* CoinDeskRealTimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskRealTimeData.swift; sourceTree = "<group>"; };
-		B654E94E215D47BA00A24BD3 /* CoinDeskHistoricalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskHistoricalRequest.swift; sourceTree = "<group>"; };
-		B654E950215D47D400A24BD3 /* CoinDeskHistoricalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskHistoricalData.swift; sourceTree = "<group>"; };
+		B654E947215D33C900A24BD3 /* RatesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesInteractor.swift; sourceTree = "<group>"; };
+		B654E949215D457400A24BD3 /* RatesRealTimeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRealTimeRequest.swift; sourceTree = "<group>"; };
+		B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRealTimeData.swift; sourceTree = "<group>"; };
+		B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesHistoricalRequest.swift; sourceTree = "<group>"; };
+		B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesHistoricalData.swift; sourceTree = "<group>"; };
 		B654E954215D498600A24BD3 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		B654E956215D4D4200A24BD3 /* RatesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesProtocols.swift; sourceTree = "<group>"; };
+		B654E959215D528300A24BD3 /* RatesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTVC.swift; sourceTree = "<group>"; };
+		B654E95B215D53C500A24BD3 /* HistorialRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialRateCell.swift; sourceTree = "<group>"; };
+		B654E95E215D53FB00A24BD3 /* RatesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesPresenter.swift; sourceTree = "<group>"; };
+		B654E960215D540D00A24BD3 /* RatesViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModels.swift; sourceTree = "<group>"; };
+		B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFomatter.swift; sourceTree = "<group>"; };
+		B654E966215D6BCC00A24BD3 /* RatesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRouter.swift; sourceTree = "<group>"; };
+		B654E969215D766300A24BD3 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +117,10 @@
 		B654E915215D1E6C00A24BD3 /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B654E968215D6C2C00A24BD3 /* Resources */,
 				B654E952215D497000A24BD3 /* Common */,
-				B654E93F215D25FF00A24BD3 /* CoinDeskModule */,
+				B654E93F215D25FF00A24BD3 /* RatesModule */,
 				B654E916215D1E6C00A24BD3 /* AppDelegate.swift */,
-				B654E918215D1E6C00A24BD3 /* ViewController.swift */,
-				B654E91A215D1E6C00A24BD3 /* Main.storyboard */,
-				B654E91D215D1E6E00A24BD3 /* Assets.xcassets */,
-				B654E91F215D1E6E00A24BD3 /* LaunchScreen.storyboard */,
 				B654E922215D1E6E00A24BD3 /* Info.plist */,
 			);
 			path = CryptoTracker;
@@ -137,21 +148,25 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		B654E93F215D25FF00A24BD3 /* CoinDeskModule */ = {
+		B654E93F215D25FF00A24BD3 /* RatesModule */ = {
 			isa = PBXGroup;
 			children = (
+				B654E966215D6BCC00A24BD3 /* RatesRouter.swift */,
+				B654E956215D4D4200A24BD3 /* RatesProtocols.swift */,
+				B654E95D215D53E900A24BD3 /* Presenter */,
+				B654E958215D524D00A24BD3 /* View */,
 				B654E940215D260A00A24BD3 /* Interactor */,
 			);
-			path = CoinDeskModule;
+			path = RatesModule;
 			sourceTree = "<group>";
 		};
 		B654E940215D260A00A24BD3 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 				B654E94D215D479800A24BD3 /* Network */,
-				B654E947215D33C900A24BD3 /* CoinDeskInteractor.swift */,
-				B654E94B215D45C600A24BD3 /* CoinDeskRealTimeData.swift */,
-				B654E950215D47D400A24BD3 /* CoinDeskHistoricalData.swift */,
+				B654E947215D33C900A24BD3 /* RatesInteractor.swift */,
+				B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */,
+				B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -160,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */,
-				B654E949215D457400A24BD3 /* CoinDeskRealTimeRequest.swift */,
-				B654E94E215D47BA00A24BD3 /* CoinDeskHistoricalRequest.swift */,
+				B654E949215D457400A24BD3 /* RatesRealTimeRequest.swift */,
+				B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -169,6 +184,7 @@
 		B654E952215D497000A24BD3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B654E962215D5FD400A24BD3 /* Helpers */,
 				B654E953215D497A00A24BD3 /* Extensions */,
 				B654E936215D1FE300A24BD3 /* Network */,
 			);
@@ -179,8 +195,45 @@
 			isa = PBXGroup;
 			children = (
 				B654E954215D498600A24BD3 /* DateExtensions.swift */,
+				B654E969215D766300A24BD3 /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B654E958215D524D00A24BD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B654E91A215D1E6C00A24BD3 /* Rates.storyboard */,
+				B654E959215D528300A24BD3 /* RatesTVC.swift */,
+				B654E95B215D53C500A24BD3 /* HistorialRateCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B654E95D215D53E900A24BD3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B654E95E215D53FB00A24BD3 /* RatesPresenter.swift */,
+				B654E960215D540D00A24BD3 /* RatesViewModels.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B654E962215D5FD400A24BD3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B654E968215D6C2C00A24BD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B654E91D215D1E6E00A24BD3 /* Assets.xcassets */,
+				B654E91F215D1E6E00A24BD3 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +319,7 @@
 			files = (
 				B654E921215D1E6E00A24BD3 /* LaunchScreen.storyboard in Resources */,
 				B654E91E215D1E6E00A24BD3 /* Assets.xcassets in Resources */,
-				B654E91C215D1E6C00A24BD3 /* Main.storyboard in Resources */,
+				B654E91C215D1E6C00A24BD3 /* Rates.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,20 +337,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B654E94F215D47BA00A24BD3 /* CoinDeskHistoricalRequest.swift in Sources */,
+				B654E94F215D47BA00A24BD3 /* RatesHistoricalRequest.swift in Sources */,
 				B654E93C215D244A00A24BD3 /* RequestManager.swift in Sources */,
 				B654E946215D2FB700A24BD3 /* HTTPCode.swift in Sources */,
 				B654E938215D22A600A24BD3 /* Result.swift in Sources */,
+				B654E95F215D53FB00A24BD3 /* RatesPresenter.swift in Sources */,
 				B654E942215D261E00A24BD3 /* CoinDeskEndpoints.swift in Sources */,
-				B654E94A215D457400A24BD3 /* CoinDeskRealTimeRequest.swift in Sources */,
-				B654E948215D33C900A24BD3 /* CoinDeskInteractor.swift in Sources */,
-				B654E951215D47D400A24BD3 /* CoinDeskHistoricalData.swift in Sources */,
-				B654E94C215D45C600A24BD3 /* CoinDeskRealTimeData.swift in Sources */,
-				B654E919215D1E6C00A24BD3 /* ViewController.swift in Sources */,
+				B654E96A215D766300A24BD3 /* StringExtensions.swift in Sources */,
+				B654E95C215D53C500A24BD3 /* HistorialRateCell.swift in Sources */,
+				B654E95A215D528300A24BD3 /* RatesTVC.swift in Sources */,
+				B654E94A215D457400A24BD3 /* RatesRealTimeRequest.swift in Sources */,
+				B654E961215D540D00A24BD3 /* RatesViewModels.swift in Sources */,
+				B654E948215D33C900A24BD3 /* RatesInteractor.swift in Sources */,
+				B654E957215D4D4200A24BD3 /* RatesProtocols.swift in Sources */,
+				B654E967215D6BCC00A24BD3 /* RatesRouter.swift in Sources */,
+				B654E951215D47D400A24BD3 /* RatesHistoricalData.swift in Sources */,
+				B654E94C215D45C600A24BD3 /* RatesRealTimeData.swift in Sources */,
 				B654E917215D1E6C00A24BD3 /* AppDelegate.swift in Sources */,
 				B654E955215D498600A24BD3 /* DateExtensions.swift in Sources */,
 				B654E944215D2AB200A24BD3 /* ResultError.swift in Sources */,
 				B654E93E215D247300A24BD3 /* EndpointProtocol.swift in Sources */,
+				B654E964215D5FE000A24BD3 /* CurrencyFomatter.swift in Sources */,
 				B654E93A215D230E00A24BD3 /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,12 +381,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B654E91A215D1E6C00A24BD3 /* Main.storyboard */ = {
+		B654E91A215D1E6C00A24BD3 /* Rates.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B654E91B215D1E6C00A24BD3 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Rates.storyboard;
 			sourceTree = "<group>";
 		};
 		B654E91F215D1E6E00A24BD3 /* LaunchScreen.storyboard */ = {

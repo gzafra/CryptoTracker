@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct CoinDeskHistoricalRequest: RequestProtocol {
-    typealias ResponseType = CoinDeskHistoricalData
+struct RatesHistoricalRequest: RequestProtocol {
+    typealias ResponseType = RatesHistoricalData
     var method: HTTPMethod = .get
     
     var url: URL? = CoinDeskEndpoint.historical.url

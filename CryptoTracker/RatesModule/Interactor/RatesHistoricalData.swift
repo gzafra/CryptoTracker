@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CoinDeskHistoricalData: Decodable {
+struct RatesHistoricalData: Decodable {
     let days: [String: Double]
     
     enum CodingKeys: String, CodingKey {

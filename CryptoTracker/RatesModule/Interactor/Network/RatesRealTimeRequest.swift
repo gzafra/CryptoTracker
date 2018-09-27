@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct CoinDeskRealTimeRequest: RequestProtocol {
-    typealias ResponseType = CoinDeskRealTimeData
+struct RatesRealTimeRequest: RequestProtocol {
+    typealias ResponseType = RatesRealTimeData
     var method: HTTPMethod = .get
     
     var url: URL? = CoinDeskEndpoint.currentPrice.url

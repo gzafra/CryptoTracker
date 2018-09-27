@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CoinDeskRealTimeData: Decodable {
+struct RatesRealTimeData: Decodable {
     let chartName: String
     let currencies: [String: CoinDeskRealTimeCurrency]
     
