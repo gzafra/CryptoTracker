@@ -13,11 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        var realTimeRequest = CoinDeskRealTimeRequest()
+        realTimeRequest.completion = { result in
+            switch result {
+            case .success(let data):
+                print(data.debugDescription)
+            case .failure(let error):
+                break
+            }
+        }
+        
+        RequestManager().send(request: realTimeRequest)
     }
 
 
