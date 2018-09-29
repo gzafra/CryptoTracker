@@ -12,7 +12,7 @@ import XCTest
 class RemoteInteractorTests: XCTestCase {
     
     func testFetchHistoricalSuccess() {
-        let mockRequestManager = MockRequestManager(promiseJson: Constants.historicalJson)
+        let mockRequestManager = MockRequestManager(promiseJson: MockRequestManagerPromises.historicalJson)
         
         let remoteInteractor = RatesRemoteInteractor(requestManager: mockRequestManager)
         testExpectation(description: "Fetch Historical Data", actionBlock: { (expectation) in
@@ -26,7 +26,7 @@ class RemoteInteractorTests: XCTestCase {
     }
     
     func testFetchHistoricalFailure() {
-        let mockRequestManager = MockRequestManager(promiseJson: Constants.historicalJson)
+        let mockRequestManager = MockRequestManager(promiseJson: MockRequestManagerPromises.historicalJson)
         mockRequestManager.shouldSucceed = false
         let remoteInteractor = RatesRemoteInteractor(requestManager: mockRequestManager)
         
@@ -38,7 +38,7 @@ class RemoteInteractorTests: XCTestCase {
     }
     
     func testFetchRealTimeRateSuccess() {
-        let mockRequestManager = MockRequestManager(promiseJson: Constants.realTimeJson)
+        let mockRequestManager = MockRequestManager(promiseJson: MockRequestManagerPromises.realTimeJson)
         let remoteInteractor = RatesRemoteInteractor(requestManager: mockRequestManager)
         let delegate = MockRatesInteractorDelegate()
         remoteInteractor.delegate = delegate
@@ -53,7 +53,7 @@ class RemoteInteractorTests: XCTestCase {
     }
     
     func testFetchRealTimeRateFailure() {
-        let mockRequestManager = MockRequestManager(promiseJson: Constants.realTimeJson)
+        let mockRequestManager = MockRequestManager(promiseJson: MockRequestManagerPromises.realTimeJson)
         mockRequestManager.shouldSucceed = false
         let remoteInteractor = RatesRemoteInteractor(requestManager: mockRequestManager)
         let delegate = MockRatesInteractorDelegate()
@@ -77,47 +77,6 @@ final class MockRatesInteractorDelegate: RatesInteractorDelegate {
     }
     
     var updated = false
-
-
 }
 
-fileprivate enum Constants {
-    static let historicalJson = "HistoricalData"
-    static let realTimeJson = "RealTimeData"
-}
 
-class MockRequestManager: RequestManagerProtocol {
-    var shouldSucceed: Bool = true
-    
-    var promiseJson: String
-    
-    init(promiseJson: String) {
-        self.promiseJson = promiseJson
-    }
-    
-    func send<T>(request: T, after: TimeInterval) where T : RequestProtocol {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + after) {
-            self.send(request: request)
-        }
-    }
-    func send<T: RequestProtocol>(request: T) {
-        if shouldSucceed {
-            guard let jsonData = loadJson(withName: promiseJson),
-            let decodedData = try? request.processResponseData(data: jsonData) else { return }
-            request.completion?(.success(decodedData))
-        }else{
-            let error = ResultError.unknownError
-            request.completion?(.failure(error))
-        }
-    }
-    
-    func loadJson(withName name: String) -> Data? {
-        guard let path = Bundle(for: type(of: self)).path(forResource: name, ofType: "json") else { return nil }
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            return data
-        } catch {
-            return nil
-        }
-    }
-}
