@@ -9,25 +9,39 @@
 import Foundation
 
 final class RatesPresenter: RatesPresenterProtocol {
-    
+  
     private enum Constants {
-        static let defaultCurrencyCode = "USD"
         static let defaultCurrencySymbol = "$"
         enum Strings {
             static let errorMessage = "Something went wrong..."
             static let nowTitle = "NOW"
         }
     }
-    var interactor: RatesInteractor?
+    var remoteInteractor: RatesRemoteInteractorProtocol?
+    var localInteractor: RatesLocalInteractorProtocol?
+    
     weak var viewInterface: RatesViewInterface?
     
     func viewDidLoad() {
-        interactor?.startRealTimeDataPolling()
+        // Try to retrieve cached data
+        if let historical = localInteractor?.fetchLocalHistorical() {
+            let viewModel = HistoricalRatesViewModel(historialRates: self.generateHistoricalRatesViewModel(for: historical))
+            self.viewInterface?.viewShouldUpdateHistorical(with: viewModel)
+        }
+        if let realTime = localInteractor?.fetchLocalRealTimeRate() {
+            guard let usdCurrency = realTime.usd else { return }
+            self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: Constants.Strings.nowTitle,
+                                                                             stringRate: CurrencyFormatter.format(rate: usdCurrency.rate, currencySymbol: usdCurrency.symbol.htmlDecoded)) )
+        }
+        
+        // Retrieve remote data
+        remoteInteractor?.startRealTimeDataPolling()
         viewNeedsUpdatedData()
     }
-    
+
     func viewNeedsUpdatedData() {
-        interactor?.fetchHistoricalData(successBlock: { (historicalData) in
+        remoteInteractor?.fetchHistoricalData(successBlock: { (historicalData) in
+            self.localInteractor?.save(historicalRates: historicalData)
             let viewModel = HistoricalRatesViewModel(historialRates: self.generateHistoricalRatesViewModel(for: historicalData))
             self.viewInterface?.viewShouldUpdateHistorical(with: viewModel)
         }, failureBlock: {
@@ -46,7 +60,8 @@ final class RatesPresenter: RatesPresenterProtocol {
 
 extension RatesPresenter: RatesInteractorDelegate {
     func didUpdate(realTimeData: RatesRealTimeData) {
-        guard let usdCurrency = realTimeData.currencies[Constants.defaultCurrencyCode] else { return }
+        self.localInteractor?.save(realTimeRate: realTimeData)
+        guard let usdCurrency = realTimeData.usd else { return }
         self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: Constants.Strings.nowTitle,
                                                                          stringRate: CurrencyFormatter.format(rate: usdCurrency.rate, currencySymbol: usdCurrency.symbol.htmlDecoded)) )
     }

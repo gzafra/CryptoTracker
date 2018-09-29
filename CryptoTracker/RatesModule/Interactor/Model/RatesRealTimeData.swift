@@ -8,9 +8,18 @@
 
 import Foundation
 
-struct RatesRealTimeData: Decodable {
+struct RatesRealTimeData: Codable {
     let chartName: String
     let currencies: [String: CoinDeskRealTimeCurrency]
+    
+    private enum Constants {
+        static let defaultCurrencyCode = "USD"
+    }
+    
+    var usd: CoinDeskRealTimeCurrency? {
+        guard let usdCurrency = currencies[Constants.defaultCurrencyCode] else { return nil }
+        return usdCurrency
+    }
     
     enum CodingKeys: String, CodingKey {
         case chartName
@@ -18,7 +27,7 @@ struct RatesRealTimeData: Decodable {
     }
 }
 
-struct CoinDeskRealTimeCurrency: Decodable {
+struct CoinDeskRealTimeCurrency: Codable {
     let code: String
     let symbol: String
     let rate: Double

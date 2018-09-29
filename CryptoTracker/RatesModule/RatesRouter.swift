@@ -14,12 +14,14 @@ class RatesRouter {
         let storyboard = UIStoryboard(name: "Rates", bundle: nil)
         let ratesTVC = storyboard.instantiateInitialViewController() as! RatesTVC
         let presenter = RatesPresenter()
-        let interactor = RatesInteractor()
+        let remoteInteractor = RatesRemoteInteractor()
+        let localInteractor = RatesLocalInteractor()
         
         // Setup
         ratesTVC.presenter = presenter
-        interactor.delegate = presenter
-        presenter.interactor = interactor
+        remoteInteractor.delegate = presenter
+        presenter.remoteInteractor = remoteInteractor
+        presenter.localInteractor = localInteractor
         presenter.viewInterface = ratesTVC
         
         return ratesTVC

@@ -12,8 +12,9 @@ class WatchRatesRouter {
     static func setupModule(with viewInterface: RatesViewInterface) {
         
         let ratesPresenter = RatesPresenter()
-        ratesPresenter.interactor = RatesInteractor()
-        ratesPresenter.interactor?.delegate = ratesPresenter
+        let remoteInteractor = RatesRemoteInteractor()
+        remoteInteractor.delegate = ratesPresenter
+        ratesPresenter.remoteInteractor = remoteInteractor
         ratesPresenter.viewInterface = viewInterface
         viewInterface.presenter = ratesPresenter
     }

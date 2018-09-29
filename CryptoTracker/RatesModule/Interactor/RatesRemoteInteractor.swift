@@ -11,7 +11,7 @@ import Foundation
 
 typealias HistoricalDataBlock = (RatesHistoricalData)->Void
 
-class RatesInteractor: RatesInteractorProtocol {
+class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
     private static let defaultPollingDelaySeconds: TimeInterval = 5.0
     
     // MARK: - Public properties
@@ -40,7 +40,7 @@ class RatesInteractor: RatesInteractorProtocol {
                     break
                 }
                 
-                self?.fetchRealTime(after: RatesInteractor.defaultPollingDelaySeconds)
+                self?.fetchRealTime(after: RatesRemoteInteractor.defaultPollingDelaySeconds)
             }
             
             self?.requestManager.send(request: realTimeRequest)

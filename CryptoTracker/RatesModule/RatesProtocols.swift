@@ -8,9 +8,16 @@
 
 import Foundation
 
-protocol RatesInteractorProtocol: class {
+protocol RatesRemoteInteractorProtocol: class {
     func startRealTimeDataPolling()
     func fetchHistoricalData(successBlock: @escaping HistoricalDataBlock, failureBlock: @escaping ()->())
+}
+
+protocol RatesLocalInteractorProtocol: class {
+    func fetchLocalHistorical() -> RatesHistoricalData?
+    func fetchLocalRealTimeRate() -> RatesRealTimeData?
+    func save(historicalRates: RatesHistoricalData)
+    func save(realTimeRate: RatesRealTimeData) 
 }
 
 protocol RatesInteractorDelegate: class {
@@ -18,6 +25,8 @@ protocol RatesInteractorDelegate: class {
 }
 
 protocol RatesPresenterProtocol: class {
+    var remoteInteractor: RatesRemoteInteractorProtocol? { get set }
+    var localInteractor: RatesLocalInteractorProtocol? { get set }
     func viewDidLoad()
     func viewNeedsUpdatedData()
 }
