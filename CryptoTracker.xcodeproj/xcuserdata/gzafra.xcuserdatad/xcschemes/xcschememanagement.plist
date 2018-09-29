@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CryptoTrackerTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Watch (Notification).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,24 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B654E912215D1E6C00A24BD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B654E926215D1E6E00A24BD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B654E96C215F6C2900A24BD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

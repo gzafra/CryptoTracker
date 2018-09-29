@@ -17,7 +17,7 @@ enum HTTPMethod: String {
     case delete
 }
 
-class RequestManager {
+class RequestManager: RequestManagerProtocol {
     
     private static func defaultConfiguration() -> URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default

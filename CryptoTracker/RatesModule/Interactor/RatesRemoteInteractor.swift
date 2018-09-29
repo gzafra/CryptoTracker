@@ -18,8 +18,12 @@ class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
     weak var delegate: RatesInteractorDelegate?
     
     // MARK: - Private properties
-    private let requestManager = RequestManager()
+    private let requestManager: RequestManagerProtocol
     private var timer: Timer?
+    
+    init(requestManager: RequestManagerProtocol = RequestManager()) {
+        self.requestManager = requestManager
+    }
     
     
     func startRealTimeDataPolling() {
