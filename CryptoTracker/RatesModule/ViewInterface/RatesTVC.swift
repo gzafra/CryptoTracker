@@ -19,7 +19,7 @@ class RatesTVC: UITableViewController {
     
     // MARK: - Properties
 
-    private var historicalViewModel: HistoricalRatesViewModel?
+    internal var historicalViewModel: HistoricalRatesViewModel?
     
     // Header view that displays the real time rate
     private let headerTitle = UILabel()

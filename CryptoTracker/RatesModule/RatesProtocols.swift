@@ -37,3 +37,7 @@ protocol RatesViewInterface: class {
     func viewShouldUpdateRealTime(with viewModel: RateViewModel)
     func showError(message: String)
 }
+
+protocol RatesRouterProtocol: class {
+    static func setupModule() -> RatesViewInterface
+}

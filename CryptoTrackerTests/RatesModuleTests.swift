@@ -84,4 +84,5 @@ class RatesModuleTests: XCTestCase {
         }, waitFor: 2.0)
     }
     
+    
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class RatesRouter {
-    static func setupModule() -> UIViewController {
+class RatesRouter: RatesRouterProtocol {
+    static func setupModule() -> RatesViewInterface {
         // Init
         let storyboard = UIStoryboard(name: "Rates", bundle: nil)
         let ratesTVC = storyboard.instantiateInitialViewController() as! RatesTVC

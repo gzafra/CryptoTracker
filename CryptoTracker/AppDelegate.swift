@@ -20,7 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func presentInitialViewController() {
-        let initialVC = RatesRouter.setupModule()
+        guard let initialVC = RatesRouter.setupModule() as? UIViewController else {
+            assertionFailure("Could not load initial ViewController")
+            return
+        }
         window?.rootViewController = initialVC
         window?.makeKeyAndVisible()
     }

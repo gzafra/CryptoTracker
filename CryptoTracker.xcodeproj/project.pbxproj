@@ -65,7 +65,6 @@
 		B654E9A2215F751600A24BD3 /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E93D215D247300A24BD3 /* EndpointProtocol.swift */; };
 		B654E9A3215F751600A24BD3 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E943215D2AB200A24BD3 /* ResultError.swift */; };
 		B654E9A4215F751600A24BD3 /* HTTPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E945215D2FB700A24BD3 /* HTTPCode.swift */; };
-		B654E9A5215F753300A24BD3 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
 		B654E9A6215F761500A24BD3 /* RatesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E95E215D53FB00A24BD3 /* RatesPresenter.swift */; };
 		B654E9AC215F7A8C00A24BD3 /* WatchRatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E9AB215F7A8C00A24BD3 /* WatchRatesRouter.swift */; };
 		B65E7E9F215FFD1A00C05513 /* HistoricalData.json in Resources */ = {isa = PBXBuildFile; fileRef = B65E7E9D215FFD1A00C05513 /* HistoricalData.json */; };
@@ -76,6 +75,10 @@
 		B65E7EAB21600FA800C05513 /* MockRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAA21600FA800C05513 /* MockRequestManager.swift */; };
 		B65E7EAD216010DF00C05513 /* MockViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAC216010DF00C05513 /* MockViewInterface.swift */; };
 		B65E7EAF21601FBE00C05513 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */; };
+		B65E7EB12160229D00C05513 /* RatesTVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EB02160229D00C05513 /* RatesTVCTests.swift */; };
+		B65E7EB22160250F00C05513 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
+		B65E7EB42160259700C05513 /* MockRatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EB32160259700C05513 /* MockRatesRouter.swift */; };
+		B65E7EB5216025D100C05513 /* Rates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B654E91A215D1E6C00A24BD3 /* Rates.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +186,8 @@
 		B65E7EAA21600FA800C05513 /* MockRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestManager.swift; sourceTree = "<group>"; };
 		B65E7EAC216010DF00C05513 /* MockViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewInterface.swift; sourceTree = "<group>"; };
 		B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		B65E7EB02160229D00C05513 /* RatesTVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTVCTests.swift; sourceTree = "<group>"; };
+		B65E7EB32160259700C05513 /* MockRatesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRatesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +287,7 @@
 				B65E7EA521600ADC00C05513 /* LocalInteractorTests.swift */,
 				B65E7EA721600F7200C05513 /* RatesModuleTests.swift */,
 				B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */,
+				B65E7EB02160229D00C05513 /* RatesTVCTests.swift */,
 			);
 			path = CryptoTrackerTests;
 			sourceTree = "<group>";
@@ -436,21 +442,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		B65E7E9C215FFCC900C05513 /* JsonMockObjects */ = {
+		B65E7E9C215FFCC900C05513 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
 				B65E7E9D215FFD1A00C05513 /* HistoricalData.json */,
 				B65E7E9E215FFD1A00C05513 /* RealTimeData.json */,
 			);
-			path = JsonMockObjects;
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		B65E7EA921600F9200C05513 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				B65E7E9C215FFCC900C05513 /* JsonMockObjects */,
+				B65E7E9C215FFCC900C05513 /* JSON */,
 				B65E7EAA21600FA800C05513 /* MockRequestManager.swift */,
 				B65E7EAC216010DF00C05513 /* MockViewInterface.swift */,
+				B65E7EB32160259700C05513 /* MockRatesRouter.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -591,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65E7EA0215FFD1A00C05513 /* RealTimeData.json in Resources */,
+				B65E7EB5216025D100C05513 /* Rates.storyboard in Resources */,
 				B65E7E9F215FFD1A00C05513 /* HistoricalData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65E7EB42160259700C05513 /* MockRatesRouter.swift in Sources */,
 				B65E7EAD216010DF00C05513 /* MockViewInterface.swift in Sources */,
 				B654E92C215D1E6E00A24BD3 /* RemoteInteractorTests.swift in Sources */,
 				B65E7EA821600F7200C05513 /* RatesModuleTests.swift in Sources */,
@@ -660,6 +669,7 @@
 				B65E7EAF21601FBE00C05513 /* ExtensionTests.swift in Sources */,
 				B653E092215FEE2A004508BF /* TestsHelper.swift in Sources */,
 				B65E7EA2215FFECB00C05513 /* Extensions.swift in Sources */,
+				B65E7EB12160229D00C05513 /* RatesTVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +686,6 @@
 				B654E99B215F750600A24BD3 /* RatesHistoricalData.swift in Sources */,
 				B654E999215F750600A24BD3 /* RatesRemoteInteractor.swift in Sources */,
 				B654E99A215F750600A24BD3 /* RatesRealTimeData.swift in Sources */,
-				B654E9A5215F753300A24BD3 /* RatesProtocols.swift in Sources */,
 				B654E99F215F751600A24BD3 /* Result.swift in Sources */,
 				B654E99C215F751000A24BD3 /* CurrencyFomatter.swift in Sources */,
 				B654E981215F6C2C00A24BD3 /* ExtensionDelegate.swift in Sources */,
@@ -689,6 +698,7 @@
 				B654E9A4215F751600A24BD3 /* HTTPCode.swift in Sources */,
 				B654E994215F715200A24BD3 /* RateRowController.swift in Sources */,
 				B654E97F215F6C2C00A24BD3 /* WatchRatesController.swift in Sources */,
+				B65E7EB22160250F00C05513 /* RatesProtocols.swift in Sources */,
 				B653E088215FC8C0004508BF /* RatesLocalInteractor.swift in Sources */,
 				B654E99D215F751000A24BD3 /* DateExtensions.swift in Sources */,
 				B653E08D215FDD1F004508BF /* RequestManagerProtocol.swift in Sources */,
