@@ -75,6 +75,7 @@
 		B65E7EA821600F7200C05513 /* RatesModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EA721600F7200C05513 /* RatesModuleTests.swift */; };
 		B65E7EAB21600FA800C05513 /* MockRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAA21600FA800C05513 /* MockRequestManager.swift */; };
 		B65E7EAD216010DF00C05513 /* MockViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAC216010DF00C05513 /* MockViewInterface.swift */; };
+		B65E7EAF21601FBE00C05513 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		B65E7EA721600F7200C05513 /* RatesModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModuleTests.swift; sourceTree = "<group>"; };
 		B65E7EAA21600FA800C05513 /* MockRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestManager.swift; sourceTree = "<group>"; };
 		B65E7EAC216010DF00C05513 /* MockViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewInterface.swift; sourceTree = "<group>"; };
+		B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				B654E92B215D1E6E00A24BD3 /* RemoteInteractorTests.swift */,
 				B65E7EA521600ADC00C05513 /* LocalInteractorTests.swift */,
 				B65E7EA721600F7200C05513 /* RatesModuleTests.swift */,
+				B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */,
 			);
 			path = CryptoTrackerTests;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				B653E08F215FE577004508BF /* MockObjects.swift in Sources */,
 				B65E7EAB21600FA800C05513 /* MockRequestManager.swift in Sources */,
 				B65E7EA621600ADC00C05513 /* LocalInteractorTests.swift in Sources */,
+				B65E7EAF21601FBE00C05513 /* ExtensionTests.swift in Sources */,
 				B653E092215FEE2A004508BF /* TestsHelper.swift in Sources */,
 				B65E7EA2215FFECB00C05513 /* Extensions.swift in Sources */,
 			);
