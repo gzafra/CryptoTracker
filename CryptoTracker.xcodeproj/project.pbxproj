@@ -71,6 +71,7 @@
 		B65E7E9F215FFD1A00C05513 /* HistoricalData.json in Resources */ = {isa = PBXBuildFile; fileRef = B65E7E9D215FFD1A00C05513 /* HistoricalData.json */; };
 		B65E7EA0215FFD1A00C05513 /* RealTimeData.json in Resources */ = {isa = PBXBuildFile; fileRef = B65E7E9E215FFD1A00C05513 /* RealTimeData.json */; };
 		B65E7EA2215FFECB00C05513 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EA1215FFECB00C05513 /* Extensions.swift */; };
+		B65E7EA621600ADC00C05513 /* LocalInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EA521600ADC00C05513 /* LocalInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		B65E7E9D215FFD1A00C05513 /* HistoricalData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HistoricalData.json; sourceTree = "<group>"; };
 		B65E7E9E215FFD1A00C05513 /* RealTimeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RealTimeData.json; sourceTree = "<group>"; };
 		B65E7EA1215FFECB00C05513 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B65E7EA521600ADC00C05513 /* LocalInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,10 +267,11 @@
 		B654E92A215D1E6E00A24BD3 /* CryptoTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				B654E92D215D1E6E00A24BD3 /* Info.plist */,
 				B65E7E9C215FFCC900C05513 /* JsonMockObjects */,
 				B653E090215FE6C4004508BF /* Helpers */,
 				B654E92B215D1E6E00A24BD3 /* RemoteInteractorTests.swift */,
-				B654E92D215D1E6E00A24BD3 /* Info.plist */,
+				B65E7EA521600ADC00C05513 /* LocalInteractorTests.swift */,
 			);
 			path = CryptoTrackerTests;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 			files = (
 				B654E92C215D1E6E00A24BD3 /* RemoteInteractorTests.swift in Sources */,
 				B653E08F215FE577004508BF /* MockObjects.swift in Sources */,
+				B65E7EA621600ADC00C05513 /* LocalInteractorTests.swift in Sources */,
 				B653E092215FEE2A004508BF /* TestsHelper.swift in Sources */,
 				B65E7EA2215FFECB00C05513 /* Extensions.swift in Sources */,
 			);
