@@ -23,6 +23,7 @@ protocol RatesPresenterProtocol: class {
 }
 
 protocol RatesViewInterface: class {
+    var presenter: RatesPresenterProtocol? { get set }
     func viewShouldUpdateHistorical(with viewModel: HistoricalRatesViewModel)
     func viewShouldUpdateRealTime(with viewModel: RateViewModel)
     func showError(message: String)
