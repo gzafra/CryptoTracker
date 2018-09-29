@@ -26,7 +26,7 @@ class RatesTVC: UITableViewController {
     private lazy var headerView: UIView = {
         let view = UIView()
         headerTitle.textAlignment = .center
-        headerTitle.text = "..."
+        headerTitle.text = "Loading..."
         view.addSubview(headerTitle)
         headerTitle.translatesAutoresizingMaskIntoConstraints = false
         headerTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -35,11 +35,15 @@ class RatesTVC: UITableViewController {
         return view
     }()
 
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl?.beginRefreshing()
         presenter?.viewDidLoad()
-        //        tableView.register(HistoricalRateCell.self, forCellReuseIdentifier: HistoricalRateCell.identifier)
+        
+        refreshControl?.addTarget(self, action: #selector(RatesTVC.handleRefresh(refreshControl:)),
+                                       for: UIControlEvents.valueChanged)
     }
 
     // MARK: - Table view data source
@@ -73,12 +77,15 @@ class RatesTVC: UITableViewController {
         return cell
     }
     
-
+    @objc func handleRefresh(refreshControl: UIRefreshControl) {
+        presenter?.viewNeedsUpdatedData()
+    }
 
 }
 
 extension RatesTVC: RatesViewInterface {
     func viewShouldUpdateHistorical(with viewModel: HistoricalRatesViewModel) {
+        refreshControl?.endRefreshing()
         self.historicalViewModel = viewModel
         tableView.reloadData()
     }
