@@ -52,8 +52,10 @@ final class RatesPresenter: RatesPresenterProtocol {
     private func generateHistoricalRatesViewModel(for data: RatesHistoricalData) -> [RateViewModel] {
         return data.days.map{ key, value in
             return RateViewModel(stringTitle: key,
-                                           stringRate: CurrencyFormatter.format(rate: value,
-                                                                                 currencySymbol: Constants.defaultCurrencySymbol)) // TODO: Should be dynamic
+                                 stringRate: CurrencyFormatter.format(rate: value,
+                                                                      currencySymbol: Constants.defaultCurrencySymbol)) // TODO: Should be dynamic
+            }.sorted{
+                $0.stringTitle > $1.stringTitle // Because it comes in a dictionary, we need to sort it by title (date)
         }
     }
 }
