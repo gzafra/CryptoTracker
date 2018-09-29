@@ -12,7 +12,7 @@ class RateRowController: NSObject {
     var rateViewModel: RateViewModel? {
         didSet{
             guard let rateViewModel = rateViewModel else { return }
-            mainLabel.setText("\(rateViewModel.stringDate): \(rateViewModel.stringValue)")
+            mainLabel.setText("\(rateViewModel.stringTitle): \(rateViewModel.stringRate)")
         }
     }
     @IBOutlet var mainLabel: WKInterfaceLabel!

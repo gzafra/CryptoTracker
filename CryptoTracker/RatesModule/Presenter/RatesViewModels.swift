@@ -19,6 +19,6 @@ struct HistoricalRatesViewModel {
 
 struct RateViewModel {
     
-    let stringDate: String
-    let stringValue: String
+    let stringTitle: String
+    let stringRate: String
 }

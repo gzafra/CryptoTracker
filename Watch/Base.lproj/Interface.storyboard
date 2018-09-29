@@ -42,6 +42,7 @@
                     <connections>
                         <outlet property="table" destination="xRt-Ka-5jD" id="SAf-KL-VDC"/>
                         <outlet property="todayLabel" destination="wB6-Ox-IsK" id="BtL-Tu-yXJ"/>
+                        <outlet property="topGroup" destination="BH7-6e-3m1" id="tDU-Pz-6je"/>
                     </connections>
                 </controller>
             </objects>

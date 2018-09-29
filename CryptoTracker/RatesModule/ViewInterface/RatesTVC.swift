@@ -69,7 +69,7 @@ class RatesTVC: UITableViewController {
         
         guard let cellViewModel = historicalViewModel?.historialRates[indexPath.row] else { return cell }
         cell.textLabel?.textAlignment = .center
-        cell.textLabel?.text = cellViewModel.stringDate + "     -       " + cellViewModel.stringValue
+        cell.textLabel?.text = cellViewModel.stringTitle + "     -       " + cellViewModel.stringRate
         return cell
     }
     
@@ -84,7 +84,7 @@ extension RatesTVC: RatesViewInterface {
     }
     
     func viewShouldUpdateRealTime(with viewModel: RateViewModel) {
-        let newRealTimeValue = "\(viewModel.stringDate) - \(viewModel.stringValue)"
+        let newRealTimeValue = "\(viewModel.stringTitle) - \(viewModel.stringRate)"
         // Skip if value is the same
         guard let currentValue = self.headerTitle.text, newRealTimeValue != currentValue else { return }
         

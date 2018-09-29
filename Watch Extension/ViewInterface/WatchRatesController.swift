@@ -23,27 +23,36 @@ class WatchRatesController: WKInterfaceController {
 
     @IBOutlet var todayLabel: WKInterfaceLabel!
     @IBOutlet var table: WKInterfaceTable!
+    @IBOutlet var topGroup: WKInterfaceGroup!
+    
     var presenter: RatesPresenterProtocol?
+    var currentRateViewModel: RateViewModel? {
+        didSet{
+            guard let currentRateViewModel = currentRateViewModel, currentRateViewModel.stringRate != oldValue?.stringRate else { return }
+            
+            self.topGroup.setBackgroundColor(.gray)
+            animate(withDuration: 0.2) {
+                self.topGroup.setBackgroundColor(.clear)
+                self.todayLabel.setText("\(currentRateViewModel.stringTitle): \(currentRateViewModel.stringRate)")
+            }
+        }
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        //Setup
+        // Setup
         WatchRatesRouter.setupModule(with: self)
-        
-        presenter?.viewDidLoad()
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+         presenter?.viewDidLoad()
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
 }
 
 extension WatchRatesController: RatesViewInterface {
@@ -59,7 +68,7 @@ extension WatchRatesController: RatesViewInterface {
     }
     
     func viewShouldUpdateRealTime(with viewModel: RateViewModel) {
-        todayLabel.setText("\(viewModel.stringDate): \(viewModel.stringValue)")
+        currentRateViewModel = viewModel
     }
     
     func showError(message: String) {
