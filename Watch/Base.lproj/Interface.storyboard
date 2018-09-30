@@ -27,7 +27,7 @@
                                     <group key="rootItem" width="1" alignment="left" spacing="2" id="MG2-CW-L2x">
                                         <items>
                                             <label width="1" height="1" alignment="center" verticalAlignment="center" text="01-09: 6,997.45$" textAlignment="center" id="IIi-ej-9Vo">
-                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                                <fontDescription key="font" type="system" pointSize="13"/>
                                             </label>
                                         </items>
                                         <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>

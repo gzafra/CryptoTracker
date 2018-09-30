@@ -1,5 +1,5 @@
 //
-//  CoinDeskProtocols.swift
+//  RatesProtocols.swift
 //  CryptoTracker
 //
 //  Created by Guillermo Zafra on 27/09/2018.
