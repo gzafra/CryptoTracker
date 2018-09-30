@@ -18,6 +18,7 @@ class CurrencyFormatter {
         return numberFormatter
     }
     
+    /// Formats a Double value to show as a currency value with provided symbol (suffix)
     static func format(rate: Double, currencySymbol: String) -> String {
         guard let stringValue = numberFormatter.string(for: rate) else { return "#####" }
         return "\(stringValue) \(currencySymbol)"

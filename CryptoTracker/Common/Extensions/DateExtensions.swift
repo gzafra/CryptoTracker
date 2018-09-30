@@ -9,6 +9,7 @@
 import Foundation
 
 extension Date {
+    /// Formats a given date in short format (yyyy-MM-dd)
     var formattedShortString: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"

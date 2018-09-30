@@ -12,6 +12,12 @@ import Foundation
 typealias HistoricalDataBlock = (RatesHistoricalData)->Void
 typealias RealTimeDataBlock = (RatesRealTimeData)->Void
 
+/**
+ RatesRemoteInteractor
+ 
+ - Fetches data remote from CoinDesk API, historical and real time.
+ - Allows for continous fetching through polling (set to 5s)
+ */
 class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
     private static let defaultPollingDelaySeconds: TimeInterval = 5.0
     
@@ -27,6 +33,8 @@ class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
     }
     
     // MARK: - Polling
+    
+    /// Schedules interactor to start polling
     func startRealTimeDataPolling() {
         pollRealTimeData()
     }
@@ -43,6 +51,8 @@ class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
     }
     
     // MARK: - Async fetching
+    
+    /// Fetches Real-Time Data from remote
     func fetchRealTimeData(successBlock: @escaping RealTimeDataBlock, failureBlock: @escaping ()->()) {
         var realTimeRequest = RatesRealTimeRequest()
         realTimeRequest.completion = { result in
@@ -59,6 +69,7 @@ class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
         requestManager.send(request: realTimeRequest)
     }
 
+    /// Fetches Historical Data from remote
     func fetchHistoricalData(successBlock: @escaping HistoricalDataBlock, failureBlock: @escaping ()->()) {
         guard let twoWeeksSinceNow = Calendar.current.date(byAdding: .day, value: -14, to: Date()) else { return }
         var historicalRequest = RatesHistoricalRequest(from: twoWeeksSinceNow, currency: "EUR")

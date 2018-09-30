@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+ RatesRouter
+ 
+ Setups the VIPER module to show Rates, returns the view controller
+ */
 class RatesRouter: RatesRouterProtocol {
     static func setupModule() -> RatesViewInterface {
         // Init

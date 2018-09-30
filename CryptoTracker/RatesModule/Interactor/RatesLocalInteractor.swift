@@ -8,6 +8,12 @@
 
 import Foundation
 
+/**
+ RatesLocalInteractor
+ 
+ - Allows for caching and fetching from cache
+ 
+ */
 final class RatesLocalInteractor: RatesLocalInteractorProtocol, Cacheable {
     var cacheName: String {
         return Constants.cacheName

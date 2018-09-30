@@ -49,10 +49,6 @@ class WatchRatesController: WKInterfaceController {
         super.willActivate()
          presenter?.viewDidLoad()
     }
-    
-    override func didDeactivate() {
-        super.didDeactivate()
-    }
 }
 
 extension WatchRatesController: RatesViewInterface {

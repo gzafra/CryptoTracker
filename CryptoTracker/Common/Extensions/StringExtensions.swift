@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-
+    /// Decodes the string containing html symbols and entities
     var htmlDecoded: String {
         let decoded = try? NSAttributedString(data: Data(utf8), options: [
             .documentType: NSAttributedString.DocumentType.html,

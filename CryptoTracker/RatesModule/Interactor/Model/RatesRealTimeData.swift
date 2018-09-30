@@ -16,7 +16,8 @@ struct RatesRealTimeData: Codable {
         static let usdCurrencyCode = "USD"
         static let eurCurrencycode = "EUR"
     }
-    
+
+    /// The default currency, currently EUR. TODO: Should be set in config
     var defaultCurrency: CoinDeskRealTimeCurrency? {
         guard let currency = currencies[Constants.eurCurrencycode] else { return nil }
         return currency

@@ -8,9 +8,20 @@
 
 import Foundation
 
+/**
+ Cacheable
+ 
+ Allows for adopting class to cache Codable objects. Caches in the Caches/ documents directory at a given path
+ */
+
 protocol Cacheable {
+    /// The name of the cache. Used as a subdirectory in the base directory
     var cacheName: String { get }
+    
+    /// The base directory used to save the file. By default /Caches folder
     var directory: URL? { get }
+    
+    /// The FileManager used to perform the operations. Uses default if not provided
     var fileManager: FileManager { get }
 }
 
@@ -36,7 +47,9 @@ extension Cacheable {
         return FileManager.default
     }
     
-    // Cache functions
+    // MARK: - Cache functions
+    
+    /// Caches a Codable object for a given key (File). Throws if writing fails
     func cache<T: Codable>(_ value: T, with key: String = Default.key) throws {
         do {
             let data = try JSONEncoder().encode(value)
@@ -50,6 +63,7 @@ extension Cacheable {
         }
     }
     
+    /// Retrieves the Codable object from cache, nil if empty
     func getCache<T: Codable>(for key: String = Default.key) -> T? {
         do {
             guard let directory = directory else { throw CacheError.invalidPath }
@@ -72,6 +86,7 @@ extension Cacheable {
         }
     }
     
+    /// Deletes the cache directory
     func deleteCache() {
         guard let filename = directory?.appendingPathComponent(cacheName) else { return }
         try? fileManager.removeItem(at: filename)

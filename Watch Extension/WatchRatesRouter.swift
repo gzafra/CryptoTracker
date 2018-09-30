@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ WatchRatesRouter
+ 
+ Setups the VIPER module to show Rates on watch companion, returns a WKInterfaceController
+ */
 class WatchRatesRouter {
     static func setupModule(with viewInterface: RatesViewInterface) {
         
