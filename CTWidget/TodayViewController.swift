@@ -9,6 +9,12 @@
 import UIKit
 import NotificationCenter
 
+/**
+ Today extension widget to show current BTC value.
+ 
+ Uses RatesRmoteIntactor without a presenter as no complex presenting logic is needed.
+ 
+ */
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet var priceLabel: UILabel!
@@ -24,10 +30,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         interactor?.fetchRealTimeData(successBlock: { [weak self] (data) in
-            guard let rate = data.usd?.rate, let symbol = data.usd?.symbol else { return }
+            guard let rate = data.defaultCurrency?.rate, let symbol = data.defaultCurrency?.symbol else { return }
             self?.priceLabel.text = CurrencyFormatter.format(rate: rate, currencySymbol: symbol.htmlDecoded )
         }, failureBlock: { [weak self] in
-            self?.priceLabel.text = "--"
+            self?.priceLabel.text = "--" // TODO: Should probably allow to retry manually
         })
         
         completionHandler(NCUpdateResult.newData)

@@ -18,12 +18,22 @@ struct RatesHistoricalRequest: RequestProtocol {
     
     var queryString: [String : String]?
     
-    init(from: Date, to: Date? = nil) {
+    
+    private enum Keys {
+        static let start = "start"
+        static let end = "end"
+        static let currency = "currency"
+    }
+    
+    init(from: Date, to: Date? = nil, currency: String?) {
         var queryStringParams = [
-            "start": from.formattedShortString,
+            Keys.start: from.formattedShortString,
         ]
         if let to = to {
-            queryStringParams["end"] = to.formattedShortString
+            queryStringParams[Keys.end] = to.formattedShortString
+        }
+        if let currency = currency {
+            queryStringParams[Keys.currency] = currency
         }
         queryString = queryStringParams
     }

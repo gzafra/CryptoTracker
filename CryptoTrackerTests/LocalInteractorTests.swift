@@ -21,7 +21,7 @@ class LocalInteractorTests: XCTestCase {
     
     func testHistoricalCache() {
         let localInteractor = RatesLocalInteractor()
-        let mockHistoricalData: RatesHistoricalData = MockObjects.mockHistoricalData
+        let mockHistoricalData: RatesHistoricalData = MockHelper.historicalData
         localInteractor.save(historicalRates: mockHistoricalData)
         
         let cachedData = localInteractor.fetchLocalHistorical()
@@ -31,7 +31,7 @@ class LocalInteractorTests: XCTestCase {
     
     func testRealTimeCache() {
         let localInteractor = RatesLocalInteractor()
-        let mockRealTimeData: RatesRealTimeData = MockObjects.mockRealTimeData
+        let mockRealTimeData: RatesRealTimeData = MockHelper.realTimeData
         localInteractor.save(realTimeRate: mockRealTimeData)
         
         let cachedData = localInteractor.fetchLocalRealTimeRate()

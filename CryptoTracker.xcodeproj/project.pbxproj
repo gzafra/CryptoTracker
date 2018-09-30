@@ -13,8 +13,7 @@
 		B653E089215FC8CD004508BF /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E083215FBA73004508BF /* Cacheable.swift */; };
 		B653E08C215FDCD8004508BF /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */; };
 		B653E08D215FDD1F004508BF /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */; };
-		B653E08F215FE577004508BF /* MockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08E215FE577004508BF /* MockObjects.swift */; };
-		B653E092215FEE2A004508BF /* TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E091215FEE2A004508BF /* TestsHelper.swift */; };
+		B653E08F215FE577004508BF /* MockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08E215FE577004508BF /* MockHelper.swift */; };
 		B654E917215D1E6C00A24BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E916215D1E6C00A24BD3 /* AppDelegate.swift */; };
 		B654E91C215D1E6C00A24BD3 /* Rates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B654E91A215D1E6C00A24BD3 /* Rates.storyboard */; };
 		B654E91E215D1E6E00A24BD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B654E91D215D1E6E00A24BD3 /* Assets.xcassets */; };
@@ -174,8 +173,7 @@
 		B653E083215FBA73004508BF /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
 		B653E085215FC10A004508BF /* RatesLocalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalInteractor.swift; sourceTree = "<group>"; };
 		B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
-		B653E08E215FE577004508BF /* MockObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockObjects.swift; sourceTree = "<group>"; };
-		B653E091215FEE2A004508BF /* TestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsHelper.swift; sourceTree = "<group>"; };
+		B653E08E215FE577004508BF /* MockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelper.swift; sourceTree = "<group>"; };
 		B654E913215D1E6C00A24BD3 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B654E916215D1E6C00A24BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B654E91B215D1E6C00A24BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Rates.storyboard; sourceTree = "<group>"; };
@@ -289,8 +287,7 @@
 		B653E090215FE6C4004508BF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B653E08E215FE577004508BF /* MockObjects.swift */,
-				B653E091215FEE2A004508BF /* TestsHelper.swift */,
+				B653E08E215FE577004508BF /* MockHelper.swift */,
 				B65E7EA1215FFECB00C05513 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -768,11 +765,10 @@
 				B65E7EAD216010DF00C05513 /* MockViewInterface.swift in Sources */,
 				B654E92C215D1E6E00A24BD3 /* RemoteInteractorTests.swift in Sources */,
 				B65E7EA821600F7200C05513 /* RatesModuleTests.swift in Sources */,
-				B653E08F215FE577004508BF /* MockObjects.swift in Sources */,
+				B653E08F215FE577004508BF /* MockHelper.swift in Sources */,
 				B65E7EAB21600FA800C05513 /* MockRequestManager.swift in Sources */,
 				B65E7EA621600ADC00C05513 /* LocalInteractorTests.swift in Sources */,
 				B65E7EAF21601FBE00C05513 /* ExtensionTests.swift in Sources */,
-				B653E092215FEE2A004508BF /* TestsHelper.swift in Sources */,
 				B65E7EA2215FFECB00C05513 /* Extensions.swift in Sources */,
 				B65E7EB12160229D00C05513 /* RatesTVCTests.swift in Sources */,
 			);

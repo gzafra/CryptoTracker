@@ -11,7 +11,7 @@ import Foundation
 final class RatesPresenter: RatesPresenterProtocol {
   
     private enum Constants {
-        static let defaultCurrencySymbol = "$"
+        static let defaultCurrencySymbol = "€"
         enum Strings {
             static let errorMessage = "Something went wrong..."
             static let nowTitle = "NOW"
@@ -28,10 +28,10 @@ final class RatesPresenter: RatesPresenterProtocol {
             let viewModel = HistoricalRatesViewModel(historialRates: self.generateHistoricalRatesViewModel(for: historical))
             self.viewInterface?.viewShouldUpdateHistorical(with: viewModel)
         }
-        if let realTime = localInteractor?.fetchLocalRealTimeRate() {
-            guard let usdCurrency = realTime.usd else { return }
+        if let realTime = localInteractor?.fetchLocalRealTimeRate(),
+            let defaultCurrency = realTime.defaultCurrency {
             self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: Constants.Strings.nowTitle,
-                                                                             stringRate: CurrencyFormatter.format(rate: usdCurrency.rate, currencySymbol: usdCurrency.symbol.htmlDecoded)) )
+                                                                             stringRate: CurrencyFormatter.format(rate: defaultCurrency.rate, currencySymbol: defaultCurrency.symbol.htmlDecoded)) )
         }
         
         // Retrieve remote data
@@ -63,9 +63,9 @@ final class RatesPresenter: RatesPresenterProtocol {
 extension RatesPresenter: RatesInteractorDelegate {
     func didUpdate(realTimeData: RatesRealTimeData) {
         self.localInteractor?.save(realTimeRate: realTimeData)
-        guard let usdCurrency = realTimeData.usd else { return }
+        guard let currency = realTimeData.defaultCurrency else { return }
         self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: Constants.Strings.nowTitle,
-                                                                         stringRate: CurrencyFormatter.format(rate: usdCurrency.rate, currencySymbol: usdCurrency.symbol.htmlDecoded)) )
+                                                                         stringRate: CurrencyFormatter.format(rate: currency.rate, currencySymbol: currency.symbol.htmlDecoded)) )
     }
     
     

@@ -13,12 +13,13 @@ struct RatesRealTimeData: Codable {
     let currencies: [String: CoinDeskRealTimeCurrency]
     
     private enum Constants {
-        static let defaultCurrencyCode = "USD"
+        static let usdCurrencyCode = "USD"
+        static let eurCurrencycode = "EUR"
     }
     
-    var usd: CoinDeskRealTimeCurrency? {
-        guard let usdCurrency = currencies[Constants.defaultCurrencyCode] else { return nil }
-        return usdCurrency
+    var defaultCurrency: CoinDeskRealTimeCurrency? {
+        guard let currency = currencies[Constants.eurCurrencycode] else { return nil }
+        return currency
     }
     
     enum CodingKeys: String, CodingKey {
