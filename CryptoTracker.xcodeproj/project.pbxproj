@@ -79,6 +79,28 @@
 		B65E7EB22160250F00C05513 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
 		B65E7EB42160259700C05513 /* MockRatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EB32160259700C05513 /* MockRatesRouter.swift */; };
 		B65E7EB5216025D100C05513 /* Rates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B654E91A215D1E6C00A24BD3 /* Rates.storyboard */; };
+		B65E7EBD2160D12F00C05513 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65E7EBC2160D12F00C05513 /* NotificationCenter.framework */; };
+		B65E7EC02160D12F00C05513 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EBF2160D12F00C05513 /* TodayViewController.swift */; };
+		B65E7EC32160D12F00C05513 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65E7EC12160D12F00C05513 /* MainInterface.storyboard */; };
+		B65E7EC72160D12F00C05513 /* CTWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B65E7EBA2160D12F00C05513 /* CTWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B65E7ECC2160DAF800C05513 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
+		B65E7ECD2160DAFF00C05513 /* RatesRemoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */; };
+		B65E7ECE2160DB6900C05513 /* RatesRealTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */; };
+		B65E7ECF2160DB6900C05513 /* RatesHistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */; };
+		B65E7ED02160DB7300C05513 /* CoinDeskEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */; };
+		B65E7ED12160DB7300C05513 /* RatesRealTimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E949215D457400A24BD3 /* RatesRealTimeRequest.swift */; };
+		B65E7ED22160DB7300C05513 /* RatesHistoricalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */; };
+		B65E7ED32160DB7C00C05513 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E939215D230E00A24BD3 /* RequestProtocol.swift */; };
+		B65E7ED42160DB7C00C05513 /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */; };
+		B65E7ED52160DB8300C05513 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E937215D22A600A24BD3 /* Result.swift */; };
+		B65E7ED62160DB8300C05513 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E93B215D244A00A24BD3 /* RequestManager.swift */; };
+		B65E7ED72160DB8300C05513 /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E93D215D247300A24BD3 /* EndpointProtocol.swift */; };
+		B65E7ED82160DB8300C05513 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E943215D2AB200A24BD3 /* ResultError.swift */; };
+		B65E7ED92160DB8300C05513 /* HTTPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E945215D2FB700A24BD3 /* HTTPCode.swift */; };
+		B65E7EDA2160DBA000C05513 /* CurrencyFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */; };
+		B65E7EDB2160DBBF00C05513 /* RatesViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E960215D540D00A24BD3 /* RatesViewModels.swift */; };
+		B65E7EDC2160DBC900C05513 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateExtensions.swift */; };
+		B65E7EDD2160DC4A00C05513 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E969215D766300A24BD3 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +125,13 @@
 			remoteGlobalIDString = B654E96C215F6C2900A24BD3;
 			remoteInfo = Watch;
 		};
+		B65E7EC52160D12F00C05513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B654E90B215D1E6C00A24BD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B65E7EB92160D12F00C05513;
+			remoteInfo = CTWidget;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -126,6 +155,17 @@
 				B654E98A215F6C2D00A24BD3 /* Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B65E7ECB2160D12F00C05513 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B65E7EC72160D12F00C05513 /* CTWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -188,6 +228,11 @@
 		B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		B65E7EB02160229D00C05513 /* RatesTVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTVCTests.swift; sourceTree = "<group>"; };
 		B65E7EB32160259700C05513 /* MockRatesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRatesRouter.swift; sourceTree = "<group>"; };
+		B65E7EBA2160D12F00C05513 /* CTWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CTWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65E7EBC2160D12F00C05513 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		B65E7EBF2160D12F00C05513 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		B65E7EC22160D12F00C05513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		B65E7EC42160D12F00C05513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +254,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B65E7EB72160D12F00C05513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B65E7EBD2160D12F00C05513 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +303,8 @@
 				B654E92A215D1E6E00A24BD3 /* CryptoTrackerTests */,
 				B654E96E215F6C2900A24BD3 /* Watch */,
 				B654E97D215F6C2C00A24BD3 /* Watch Extension */,
+				B65E7EBE2160D12F00C05513 /* CTWidget */,
+				B65E7EBB2160D12F00C05513 /* Frameworks */,
 				B654E914215D1E6C00A24BD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -261,6 +316,7 @@
 				B654E927215D1E6E00A24BD3 /* CryptoTrackerTests.xctest */,
 				B654E96D215F6C2900A24BD3 /* Watch.app */,
 				B654E979215F6C2C00A24BD3 /* Watch Extension.appex */,
+				B65E7EBA2160D12F00C05513 /* CTWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -462,6 +518,24 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		B65E7EBB2160D12F00C05513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B65E7EBC2160D12F00C05513 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B65E7EBE2160D12F00C05513 /* CTWidget */ = {
+			isa = PBXGroup;
+			children = (
+				B65E7EBF2160D12F00C05513 /* TodayViewController.swift */,
+				B65E7EC12160D12F00C05513 /* MainInterface.storyboard */,
+				B65E7EC42160D12F00C05513 /* Info.plist */,
+			);
+			path = CTWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,11 +547,13 @@
 				B654E910215D1E6C00A24BD3 /* Frameworks */,
 				B654E911215D1E6C00A24BD3 /* Resources */,
 				B654E992215F6C2D00A24BD3 /* Embed Watch Content */,
+				B65E7ECB2160D12F00C05513 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				B654E989215F6C2D00A24BD3 /* PBXTargetDependency */,
+				B65E7EC62160D12F00C05513 /* PBXTargetDependency */,
 			);
 			name = CryptoTracker;
 			productName = CryptoTracker;
@@ -536,6 +612,23 @@
 			productReference = B654E979215F6C2C00A24BD3 /* Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		B65E7EB92160D12F00C05513 /* CTWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B65E7EC82160D12F00C05513 /* Build configuration list for PBXNativeTarget "CTWidget" */;
+			buildPhases = (
+				B65E7EB62160D12F00C05513 /* Sources */,
+				B65E7EB72160D12F00C05513 /* Frameworks */,
+				B65E7EB82160D12F00C05513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CTWidget;
+			productName = CTWidget;
+			productReference = B65E7EBA2160D12F00C05513 /* CTWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -559,6 +652,9 @@
 					B654E978215F6C2C00A24BD3 = {
 						CreatedOnToolsVersion = 9.4;
 					};
+					B65E7EB92160D12F00C05513 = {
+						CreatedOnToolsVersion = 9.4;
+					};
 				};
 			};
 			buildConfigurationList = B654E90E215D1E6C00A24BD3 /* Build configuration list for PBXProject "CryptoTracker" */;
@@ -578,6 +674,7 @@
 				B654E926215D1E6E00A24BD3 /* CryptoTrackerTests */,
 				B654E96C215F6C2900A24BD3 /* Watch */,
 				B654E978215F6C2C00A24BD3 /* Watch Extension */,
+				B65E7EB92160D12F00C05513 /* CTWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -617,6 +714,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B654E985215F6C2D00A24BD3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B65E7EB82160D12F00C05513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B65E7EC32160D12F00C05513 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +810,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B65E7EB62160D12F00C05513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B65E7ED32160DB7C00C05513 /* RequestProtocol.swift in Sources */,
+				B65E7ED92160DB8300C05513 /* HTTPCode.swift in Sources */,
+				B65E7ED02160DB7300C05513 /* CoinDeskEndpoints.swift in Sources */,
+				B65E7ED72160DB8300C05513 /* EndpointProtocol.swift in Sources */,
+				B65E7ED82160DB8300C05513 /* ResultError.swift in Sources */,
+				B65E7EDC2160DBC900C05513 /* DateExtensions.swift in Sources */,
+				B65E7ED22160DB7300C05513 /* RatesHistoricalRequest.swift in Sources */,
+				B65E7ED62160DB8300C05513 /* RequestManager.swift in Sources */,
+				B65E7ECF2160DB6900C05513 /* RatesHistoricalData.swift in Sources */,
+				B65E7EC02160D12F00C05513 /* TodayViewController.swift in Sources */,
+				B65E7ECD2160DAFF00C05513 /* RatesRemoteInteractor.swift in Sources */,
+				B65E7ED12160DB7300C05513 /* RatesRealTimeRequest.swift in Sources */,
+				B65E7ECE2160DB6900C05513 /* RatesRealTimeData.swift in Sources */,
+				B65E7ECC2160DAF800C05513 /* RatesProtocols.swift in Sources */,
+				B65E7ED42160DB7C00C05513 /* RequestManagerProtocol.swift in Sources */,
+				B65E7EDA2160DBA000C05513 /* CurrencyFomatter.swift in Sources */,
+				B65E7ED52160DB8300C05513 /* Result.swift in Sources */,
+				B65E7EDB2160DBBF00C05513 /* RatesViewModels.swift in Sources */,
+				B65E7EDD2160DC4A00C05513 /* StringExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -722,6 +853,11 @@
 			isa = PBXTargetDependency;
 			target = B654E96C215F6C2900A24BD3 /* Watch */;
 			targetProxy = B654E988215F6C2D00A24BD3 /* PBXContainerItemProxy */;
+		};
+		B65E7EC62160D12F00C05513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B65E7EB92160D12F00C05513 /* CTWidget */;
+			targetProxy = B65E7EC52160D12F00C05513 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -748,6 +884,14 @@
 				B654E970215F6C2900A24BD3 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		B65E7EC12160D12F00C05513 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B65E7EC22160D12F00C05513 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -870,6 +1014,7 @@
 		B654E931215D1E6E00A24BD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CryptoTracker/Info.plist;
@@ -887,6 +1032,7 @@
 		B654E932215D1E6E00A24BD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CryptoTracker/Info.plist;
@@ -1019,6 +1165,42 @@
 			};
 			name = Release;
 		};
+		B65E7EC92160D12F00C05513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CTWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzafra.CryptoTracker.CTWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B65E7ECA2160D12F00C05513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CTWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzafra.CryptoTracker.CTWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1063,6 +1245,15 @@
 			buildConfigurations = (
 				B654E990215F6C2D00A24BD3 /* Debug */,
 				B654E991215F6C2D00A24BD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B65E7EC82160D12F00C05513 /* Build configuration list for PBXNativeTarget "CTWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B65E7EC92160D12F00C05513 /* Debug */,
+				B65E7ECA2160D12F00C05513 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

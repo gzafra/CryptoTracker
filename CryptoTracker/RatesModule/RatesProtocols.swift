@@ -11,6 +11,7 @@ import Foundation
 protocol RatesRemoteInteractorProtocol: class {
     func startRealTimeDataPolling()
     func fetchHistoricalData(successBlock: @escaping HistoricalDataBlock, failureBlock: @escaping ()->())
+    func fetchRealTimeData(successBlock: @escaping RealTimeDataBlock, failureBlock: @escaping ()->()) 
 }
 
 protocol RatesLocalInteractorProtocol: class {
