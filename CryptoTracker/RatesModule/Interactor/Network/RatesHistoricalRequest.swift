@@ -27,12 +27,12 @@ struct RatesHistoricalRequest: RequestProtocol {
         static let currency = "currency"
     }
     
-    init(from: Date, to: Date? = nil, currency: String?) {
+    init(from startDate: Date, to endDate: Date? = nil, currency: String?) {
         var queryStringParams = [
-            Keys.start: from.formattedString,
+            Keys.start: DateFormatterHelper.formattedString(from: startDate),
         ]
-        if let to = to {
-            queryStringParams[Keys.end] = to.formattedString
+        if let endDate = endDate {
+            queryStringParams[Keys.end] = DateFormatterHelper.formattedString(from: endDate)
         }
         if let currency = currency {
             queryStringParams[Keys.currency] = currency

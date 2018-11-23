@@ -8,20 +8,23 @@
 
 import Foundation
 
-extension Date {
+class DateFormatterHelper {
+    private static var dateFormatter: DateFormatter = {
+        var numberFormatter = DateFormatter()
+        return numberFormatter
+    }()
+    
     /// Formats a given date in format (yyyy-MM-dd)
-    var formattedString: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let dateString = formatter.string(from: self)
+    static func formattedString(from date: Date) -> String {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: date)
         return dateString
     }
     
     /// Formats a given date in format (MM-dd)
-    var formattedShortString: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd"
-        let dateString = formatter.string(from: self)
+    static func formattedShortString(from date: Date) -> String {
+        dateFormatter.dateFormat = "MM-dd"
+        let dateString = dateFormatter.string(from: date)
         return dateString
     }
 }
