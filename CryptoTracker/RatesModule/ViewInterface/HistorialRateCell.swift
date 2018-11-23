@@ -9,9 +9,9 @@
 import UIKit
 
 class HistoricalRateCell: UITableViewCell {
-    static var identifier : String {
+    static var identifier : String = {
         return String(describing: self)
-    }
+    }()
     
     var titleLabel = UILabel()
     

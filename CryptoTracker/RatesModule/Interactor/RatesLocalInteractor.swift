@@ -14,9 +14,10 @@ import Foundation
  - Allows for caching and fetching from cache
  
  */
-final class RatesLocalInteractor: RatesLocalInteractorProtocol, Cacheable {
-    var cacheName: String {
-        return Constants.cacheName
+final class RatesLocalInteractor: RatesLocalInteractorProtocol {
+    let cacheManager: CacheManager
+    init() {
+        self.cacheManager = CacheManager(cacheName: Constants.cacheName)
     }
     
     private enum Constants {
@@ -26,20 +27,20 @@ final class RatesLocalInteractor: RatesLocalInteractorProtocol, Cacheable {
     }
     
     func fetchLocalHistorical() -> RatesHistoricalData? {
-        let data: RatesHistoricalData? = getCache(for: Constants.historicalCache)
+        let data: RatesHistoricalData? = cacheManager.getCache(for: Constants.historicalCache)
         return data
     }
     
     func fetchLocalRealTimeRate() -> RatesRealTimeData? {
-        let data: RatesRealTimeData? = getCache(for: Constants.realtimeCache)
+        let data: RatesRealTimeData? = cacheManager.getCache(for: Constants.realtimeCache)
         return data
     }
     
     func save(historicalRates: RatesHistoricalData) {
-        try? cache(historicalRates, with: Constants.historicalCache)
+        try? cacheManager.cache(historicalRates, with: Constants.historicalCache)
     }
     
     func save(realTimeRate: RatesRealTimeData) {
-        try? cache(realTimeRate, with: Constants.realtimeCache)
+        try? cacheManager.cache(realTimeRate, with: Constants.realtimeCache)
     }
 }

@@ -9,12 +9,14 @@
 import Foundation
 
 struct RatesHistoricalRequest: RequestProtocol {
+
+    var completion: ((Result<RatesHistoricalData>) -> Void)?
+    
     typealias ResponseType = RatesHistoricalData
     var method: HTTPMethod = .get
     
     var url: URL? = CoinDeskEndpoint.historical.url
     
-    var completion: ((Result<ResponseType?>) -> Void)?
     
     var queryString: [String : String]?
     

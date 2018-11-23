@@ -9,14 +9,14 @@
 import Foundation
 
 class CurrencyFormatter {
-    private static var numberFormatter: NumberFormatter {
+    private static var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumFractionDigits = 2
         numberFormatter.minimumFractionDigits = 2
         numberFormatter.roundingMode = .down
         return numberFormatter
-    }
+    }()
     
     /// Formats a Double value to show as a currency value with provided symbol (suffix)
     static func format(rate: Double, currencySymbol: String) -> String {

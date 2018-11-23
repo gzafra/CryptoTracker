@@ -1,5 +1,5 @@
 //
-//  Cacheable.swift
+//  CacheManager.swift
 //  CryptoTracker
 //
 //  Created by Guillermo Zafra on 29/09/2018.
@@ -7,23 +7,6 @@
 //
 
 import Foundation
-
-/**
- Cacheable
- 
- Allows for adopting class to cache Codable objects. Caches in the Caches/ documents directory at a given path
- */
-
-protocol Cacheable {
-    /// The name of the cache. Used as a subdirectory in the base directory
-    var cacheName: String { get }
-    
-    /// The base directory used to save the file. By default /Caches folder
-    var directory: URL? { get }
-    
-    /// The FileManager used to perform the operations. Uses default if not provided
-    var fileManager: FileManager { get }
-}
 
 
 enum CacheError: Error {
@@ -35,18 +18,20 @@ fileprivate enum Default {
     static let key = "Shared"
 }
 
-extension Cacheable {
 
-    var directory: URL? {
-        let paths = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
-        guard paths.count > 0 else { return nil }
-        return paths[0]
-    }
+class CacheManager {
     
-    var fileManager: FileManager {
-        return FileManager.default
-    }
+    let directory: URL?
+    let cacheName: String
+    let fileManager: FileManager
     
+    init(cacheName: String, directory: URL? = Defaults.defaultDirectory, fileManager: FileManager = Defaults.defaultFileManager) {
+        self.cacheName = cacheName
+        self.directory = directory
+        self.fileManager = fileManager
+    }
+
+
     // MARK: - Cache functions
     
     /// Caches a Codable object for a given key (File). Throws if writing fails
@@ -90,5 +75,19 @@ extension Cacheable {
     func deleteCache() {
         guard let filename = directory?.appendingPathComponent(cacheName) else { return }
         try? fileManager.removeItem(at: filename)
+    }
+}
+
+
+// MARK: - Defaults
+fileprivate enum Defaults {
+    static var defaultDirectory: URL? {
+        let paths = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
+        guard paths.count > 0 else { return nil }
+        return paths[0]
+    }
+    
+    static var defaultFileManager: FileManager {
+        return FileManager.default
     }
 }

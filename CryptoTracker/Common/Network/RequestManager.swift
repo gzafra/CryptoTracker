@@ -19,18 +19,18 @@ enum HTTPMethod: String {
 
 class RequestManager: RequestManagerProtocol {
     
-    private static func defaultConfiguration() -> URLSessionConfiguration {
+    private static var defaultConfiguration: URLSessionConfiguration = {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10
         configuration.timeoutIntervalForResource = 30
         return configuration
-    }
+    }()
     
     private let sessionConfiguration: URLSessionConfiguration
     
     
     // MARK: - Lifecycle
-    init(sessionConfiguration: URLSessionConfiguration = RequestManager.defaultConfiguration()) {
+    init(sessionConfiguration: URLSessionConfiguration = RequestManager.defaultConfiguration) {
         self.sessionConfiguration = sessionConfiguration
     }
 
@@ -85,13 +85,8 @@ class RequestManager: RequestManagerProtocol {
                     return
                 }
                 
-                // If method is DELETE or no data, return success
-                guard request.method != .delete, let data = serverData else {
-                    request.completion?(Result.success(nil))
-                    return
-                }
                 do {
-                    let processedData = try request.processResponseData(data: data)
+                    let processedData = try request.processResponseData(data: serverData)
                     request.completion?(Result.success(processedData))
                     
                 } catch {

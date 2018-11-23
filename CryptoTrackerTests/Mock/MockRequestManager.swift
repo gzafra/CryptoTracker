@@ -28,6 +28,7 @@ class MockRequestManager: RequestManagerProtocol {
             self.send(request: request)
         }
     }
+    
     func send<T: RequestProtocol>(request: T) {
         if shouldSucceed {
             guard let jsonData = loadJson(withName: promiseJson),

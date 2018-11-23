@@ -9,10 +9,11 @@
 import Foundation
 
 struct RatesRealTimeRequest: RequestProtocol {
+    
     typealias ResponseType = RatesRealTimeData
     var method: HTTPMethod = .get
     
     var url: URL? = CoinDeskEndpoint.currentPrice.url
     
-    var completion: ((Result<ResponseType?>) -> Void)?
+    var completion: ((Result<RatesRealTimeData>) -> Void)?
 }

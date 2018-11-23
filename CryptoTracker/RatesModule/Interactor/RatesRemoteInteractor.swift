@@ -58,7 +58,6 @@ class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
         realTimeRequest.completion = { result in
             switch result {
             case .success(let data):
-                guard let data = data else { return }
                 successBlock(data)
             case .failure(_):
                 failureBlock()
@@ -76,7 +75,6 @@ class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
         historicalRequest.completion = { result in
             switch result {
             case .success(let data):
-                guard let data = data else { return }
                 successBlock(data)
             case .failure(_):
                 failureBlock()

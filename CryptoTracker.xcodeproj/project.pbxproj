@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B653E084215FBA73004508BF /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E083215FBA73004508BF /* Cacheable.swift */; };
+		B653E084215FBA73004508BF /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E083215FBA73004508BF /* CacheManager.swift */; };
 		B653E086215FC10A004508BF /* RatesLocalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E085215FC10A004508BF /* RatesLocalInteractor.swift */; };
 		B653E088215FC8C0004508BF /* RatesLocalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E085215FC10A004508BF /* RatesLocalInteractor.swift */; };
-		B653E089215FC8CD004508BF /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E083215FBA73004508BF /* Cacheable.swift */; };
+		B653E089215FC8CD004508BF /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E083215FBA73004508BF /* CacheManager.swift */; };
 		B653E08C215FDCD8004508BF /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */; };
 		B653E08D215FDD1F004508BF /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */; };
 		B653E08F215FE577004508BF /* MockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08E215FE577004508BF /* MockHelper.swift */; };
@@ -170,7 +170,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B653E083215FBA73004508BF /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
+		B653E083215FBA73004508BF /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		B653E085215FC10A004508BF /* RatesLocalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalInteractor.swift; sourceTree = "<group>"; };
 		B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
 		B653E08E215FE577004508BF /* MockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelper.swift; sourceTree = "<group>"; };
@@ -394,6 +394,7 @@
 		B654E952215D497000A24BD3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B6D2A99C21A80AE500DA8F82 /* Cache */,
 				B654E962215D5FD400A24BD3 /* Helpers */,
 				B654E953215D497A00A24BD3 /* Extensions */,
 				B654E936215D1FE300A24BD3 /* Network */,
@@ -406,7 +407,6 @@
 			children = (
 				B654E954215D498600A24BD3 /* DateExtensions.swift */,
 				B654E969215D766300A24BD3 /* StringExtensions.swift */,
-				B653E083215FBA73004508BF /* Cacheable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,6 +531,14 @@
 				B65E7EC42160D12F00C05513 /* Info.plist */,
 			);
 			path = CTWidget;
+			sourceTree = "<group>";
+		};
+		B6D2A99C21A80AE500DA8F82 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				B653E083215FBA73004508BF /* CacheManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -733,7 +741,7 @@
 				B654E93C215D244A00A24BD3 /* RequestManager.swift in Sources */,
 				B653E086215FC10A004508BF /* RatesLocalInteractor.swift in Sources */,
 				B654E946215D2FB700A24BD3 /* HTTPCode.swift in Sources */,
-				B653E084215FBA73004508BF /* Cacheable.swift in Sources */,
+				B653E084215FBA73004508BF /* CacheManager.swift in Sources */,
 				B654E938215D22A600A24BD3 /* Result.swift in Sources */,
 				B654E95F215D53FB00A24BD3 /* RatesPresenter.swift in Sources */,
 				B654E942215D261E00A24BD3 /* CoinDeskEndpoints.swift in Sources */,
@@ -780,7 +788,7 @@
 			files = (
 				B654E9A1215F751600A24BD3 /* RequestManager.swift in Sources */,
 				B654E996215F750600A24BD3 /* CoinDeskEndpoints.swift in Sources */,
-				B653E089215FC8CD004508BF /* Cacheable.swift in Sources */,
+				B653E089215FC8CD004508BF /* CacheManager.swift in Sources */,
 				B654E9A6215F761500A24BD3 /* RatesPresenter.swift in Sources */,
 				B654E998215F750600A24BD3 /* RatesHistoricalRequest.swift in Sources */,
 				B654E9AC215F7A8C00A24BD3 /* WatchRatesRouter.swift in Sources */,
