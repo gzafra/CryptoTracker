@@ -18,7 +18,7 @@ NOTE: I had no previous experience with WatchKit apps nor Today Extension so for
 
 ### Resources used
 
-The network layer `RequestManager` has been reused from previous projects but simplified for this project's needs. However it's 100% made by me. The same for Cacheable extension.
+The network layer `RequestManager` has been reused from previous projects but simplified for this project's needs. However it's 100% made by me. 
 
 Aside from the `HTTPCode` file, everything else has been made exclusively for this project.
 
