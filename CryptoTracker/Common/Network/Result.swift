@@ -8,4 +8,7 @@
 
 import Foundation
 
-
+enum Result<T: Decodable> {
+    case success(T)
+    case failure(ResultError)
+}
