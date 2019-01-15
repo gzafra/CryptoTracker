@@ -26,14 +26,14 @@ protocol RatesInteractorDelegate: class {
 }
 
 protocol RatesPresenterProtocol: class {
-    var remoteInteractor: RatesRemoteInteractorProtocol? { get set }
+    var remoteInteractor: RatesRemoteInteractorProtocol { get }
     var localInteractor: RatesLocalInteractorProtocol? { get set }
     func viewDidLoad()
     func viewNeedsUpdatedData()
 }
 
 protocol RatesViewInterface: class {
-    var presenter: RatesPresenterProtocol? { get set }
+    var presenter: RatesPresenterProtocol { get set }
     func viewShouldUpdateHistorical(with viewModel: HistoricalRatesViewModel)
     func viewShouldUpdateRealTime(with viewModel: RateViewModel)
     func showError(message: String)

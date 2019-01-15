@@ -15,19 +15,18 @@ import UIKit
  */
 class RatesRouter: RatesRouterProtocol {
     static func setupModule() -> RatesViewInterface {
-        // Init
-        let storyboard = UIStoryboard(name: "Rates", bundle: nil)
-        let ratesTVC = storyboard.instantiateInitialViewController() as! RatesTVC
-        let presenter = RatesPresenter()
-        let remoteInteractor = RatesRemoteInteractor()
-        let localInteractor = RatesLocalInteractor()
         
+        // Init
+        let remoteInteractor = RatesRemoteInteractor()
+        let presenter = RatesPresenter(remoteInteractor: remoteInteractor)
+        let ratesTVC = RatesTVC(presenter: presenter)
+        let localInteractor = RatesLocalInteractor()
+
         // Setup
-        ratesTVC.presenter = presenter
+        presenter.viewInterface = ratesTVC
         remoteInteractor.delegate = presenter
         presenter.remoteInteractor = remoteInteractor
         presenter.localInteractor = localInteractor
-        presenter.viewInterface = ratesTVC
         
         return ratesTVC
     }

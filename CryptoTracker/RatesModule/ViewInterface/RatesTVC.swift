@@ -8,9 +8,12 @@
 
 import UIKit
 
-class RatesTVC: UITableViewController {
-    private let cellIdentifier = "HistoricalRateCell"
-    var presenter: RatesPresenterProtocol?
+class RatesTVC: UIViewController {
+    var presenter: RatesPresenterProtocol
+    
+    // Outlets
+    public var tableView = UITableView(frame: .zero, style: .grouped)
+    var refreshControl = UIRefreshControl()
     
     // MARK: - Layout
     private enum Layout {
@@ -23,6 +26,7 @@ class RatesTVC: UITableViewController {
     
     // Header view that displays the real time rate
     private let headerTitle = UILabel()
+    
     private lazy var headerView: UIView = {
         let view = UIView()
         headerTitle.textAlignment = .center
@@ -34,58 +38,83 @@ class RatesTVC: UITableViewController {
         headerTitle.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         return view
     }()
-
-
-    // MARK: - Lifecycle
+    
+    public init(presenter: RatesPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+    
+    func commonInit() {
+        view.backgroundColor = .white
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelection = false
+        tableView.register(HistoricalRateCell.self, forCellReuseIdentifier: HistoricalRateCell.identifier)
+        view.addSubview(tableView)
+        tableView.autoPinEdges(to: view)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshControl?.beginRefreshing()
-        presenter?.viewDidLoad()
+        refreshControl.beginRefreshing()
+        presenter.viewDidLoad()
         
-        refreshControl?.addTarget(self, action: #selector(RatesTVC.handleRefresh(refreshControl:)),
+        refreshControl.addTarget(self, action: #selector(RatesTVC.handleRefresh(refreshControl:)),
                                        for: UIControlEvents.valueChanged)
     }
 
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    @objc func handleRefresh(refreshControl: UIRefreshControl) {
+        presenter.viewNeedsUpdatedData()
+    }
+
+}
+
+extension RatesTVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return headerView
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Layout.headerHeight
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return historicalViewModel?.numberOfSections ?? 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historicalViewModel?.numberOfRows ?? 0
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+}
+
+extension RatesTVC: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return historicalViewModel?.numberOfSections ?? 0
+    }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return historicalViewModel?.numberOfRows ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HistoricalRateCell.identifier, for: indexPath)
         
         guard let cellViewModel = historicalViewModel?.historialRates[indexPath.row] else { return cell }
         cell.textLabel?.textAlignment = .center
         cell.textLabel?.text = cellViewModel.stringTitle + "     -       " + cellViewModel.stringRate
         return cell
     }
-    
-    @objc func handleRefresh(refreshControl: UIRefreshControl) {
-        presenter?.viewNeedsUpdatedData()
-    }
-
 }
 
 extension RatesTVC: RatesViewInterface {
+    
     func viewShouldUpdateHistorical(with viewModel: HistoricalRatesViewModel) {
-        refreshControl?.endRefreshing()
+        refreshControl.endRefreshing()
         self.historicalViewModel = viewModel
         tableView.reloadData()
     }

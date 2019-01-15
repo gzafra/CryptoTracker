@@ -25,7 +25,14 @@ class WatchRatesController: WKInterfaceController {
     @IBOutlet var table: WKInterfaceTable!
     @IBOutlet var topGroup: WKInterfaceGroup!
     
-    var presenter: RatesPresenterProtocol?
+    lazy var presenter: RatesPresenterProtocol = {
+        let remoteInteractor = RatesRemoteInteractor()
+        let ratesPresenter = RatesPresenter(remoteInteractor: remoteInteractor)
+        ratesPresenter.viewInterface = self
+        remoteInteractor.delegate = ratesPresenter
+        return ratesPresenter
+    }()
+    
     var currentRateViewModel: RateViewModel? {
         didSet{
             guard let currentRateViewModel = currentRateViewModel, currentRateViewModel.stringRate != oldValue?.stringRate else { return }
@@ -37,17 +44,10 @@ class WatchRatesController: WKInterfaceController {
             }
         }
     }
-    
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
-        // Setup
-        WatchRatesRouter.setupModule(with: self)
-    }
 
     override func willActivate() {
         super.willActivate()
-         presenter?.viewDidLoad()
+         presenter.viewDidLoad()
     }
 }
 
@@ -69,7 +69,7 @@ extension WatchRatesController: RatesViewInterface {
     
     func showError(message: String) {
         let reload = WKAlertAction.init(title: Constants.Strings.reloadButton, style:.default) {
-            self.presenter?.viewNeedsUpdatedData()
+            self.presenter.viewNeedsUpdatedData()
         }
         
         presentAlert(withTitle: Constants.Strings.errorTitle, message: message, preferredStyle:.actionSheet, actions: [reload])
