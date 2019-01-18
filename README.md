@@ -15,19 +15,20 @@ For the TodayExtension the RemoteInteractor is used independently from the ViewC
 
 NOTE: I had no previous experience with WatchKit apps nor Today Extension so forgive for any bad practices I may have taken.
 
+### Considerations
 
-### Resources used
+- RequestManager is a simple library to create HTTP requests without much overhead. See: https://github.com/gzafra/SimpleRequestManager
 
-The network layer `RequestManager` has been reused from previous projects but simplified for this project's needs. However it's 100% made by me. 
+- For the project structure I have decided to split it in 3 layers (presentation, domain, data) and within these, for the specific modules and one for common / shared content.
 
-Aside from the `HTTPCode` file, everything else has been made exclusively for this project.
+- For the UI I have decided to use programmatically created views as UI is simple and it allows for easier testing.
 
 
 ### WIP
 
 There are several TODO's in the project about things that should be reworked next. 
 
-- Refactor hardcoded currency into dynamic configurable value.
 - Refactor UI to adapt to different devices (especially the Watch)
 - Move hardcoded config values (URL's, Endpoints) to config plist file.
 - Workout failure cases, retries and recovery.
+
