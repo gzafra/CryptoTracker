@@ -94,8 +94,6 @@
 		B6A3995A21F1CCC900731CB1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995921F1CCC900731CB1 /* AppConstants.swift */; };
 		B6A3995B21F1CE7B00731CB1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995921F1CCC900731CB1 /* AppConstants.swift */; };
 		B6A3995C21F1CE7C00731CB1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995921F1CCC900731CB1 /* AppConstants.swift */; };
-		B6A3996221F1D1E300731CB1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A3996021F1D1E300731CB1 /* LoadingView.xib */; };
-		B6A3996321F1D1E300731CB1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3996121F1D1E300731CB1 /* LoadingView.swift */; };
 		B6A3996E21F1D35300731CB1 /* RatesLocalizedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995D21F1D0C800731CB1 /* RatesLocalizedResources.swift */; };
 		B6A3997421F1D4BC00731CB1 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
 		B6A3997521F1D4BE00731CB1 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
@@ -104,8 +102,10 @@
 		B6A3997921F1D54E00731CB1 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
 		B6A3997A21F1D55400731CB1 /* RatesRemoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */; };
 		B6A3997B21F1D55E00731CB1 /* RatesViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E960215D540D00A24BD3 /* RatesViewModels.swift */; };
-		B6A3997E21F1E53400731CB1 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3997D21F1E53400731CB1 /* LoadingViewController.swift */; };
 		B6A3998221F1E5C500731CB1 /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3998121F1E5C500731CB1 /* UIAlertControllerExtensions.swift */; };
+		B6A3998621F1E93900731CB1 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3998321F1E93900731CB1 /* LoadingViewController.swift */; };
+		B6A3998721F1E93900731CB1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3998421F1E93900731CB1 /* LoadingView.swift */; };
+		B6A3998821F1E93900731CB1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A3998521F1E93900731CB1 /* LoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,10 +238,10 @@
 		B65E7EC42160D12F00C05513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A3995921F1CCC900731CB1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B6A3995D21F1D0C800731CB1 /* RatesLocalizedResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalizedResources.swift; sourceTree = "<group>"; };
-		B6A3996021F1D1E300731CB1 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
-		B6A3996121F1D1E300731CB1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		B6A3997D21F1E53400731CB1 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B6A3998121F1E5C500731CB1 /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
+		B6A3998321F1E93900731CB1 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		B6A3998421F1E93900731CB1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B6A3998521F1E93900731CB1 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,9 +582,9 @@
 		B6A3997F21F1E5B300731CB1 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				B6A3997D21F1E53400731CB1 /* LoadingViewController.swift */,
-				B6A3996021F1D1E300731CB1 /* LoadingView.xib */,
-				B6A3996121F1D1E300731CB1 /* LoadingView.swift */,
+				B6A3998421F1E93900731CB1 /* LoadingView.swift */,
+				B6A3998521F1E93900731CB1 /* LoadingView.xib */,
+				B6A3998321F1E93900731CB1 /* LoadingViewController.swift */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -753,7 +753,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A3996221F1D1E300731CB1 /* LoadingView.xib in Resources */,
+				B6A3998821F1E93900731CB1 /* LoadingView.xib in Resources */,
 				B654E921215D1E6E00A24BD3 /* LaunchScreen.storyboard in Resources */,
 				B654E91E215D1E6E00A24BD3 /* Assets.xcassets in Resources */,
 			);
@@ -817,7 +817,7 @@
 				B654E948215D33C900A24BD3 /* RatesRemoteInteractor.swift in Sources */,
 				B654E967215D6BCC00A24BD3 /* RatesRouter.swift in Sources */,
 				B606D10A21EDE9B60072FFDB /* UIViewExtensions.swift in Sources */,
-				B6A3997E21F1E53400731CB1 /* LoadingViewController.swift in Sources */,
+				B6A3998621F1E93900731CB1 /* LoadingViewController.swift in Sources */,
 				B654E951215D47D400A24BD3 /* RatesHistoricalData.swift in Sources */,
 				B654E94C215D45C600A24BD3 /* RatesRealTimeData.swift in Sources */,
 				B6A3995A21F1CCC900731CB1 /* AppConstants.swift in Sources */,
@@ -828,8 +828,8 @@
 				B654E93E215D247300A24BD3 /* EndpointProtocol.swift in Sources */,
 				B654E964215D5FE000A24BD3 /* CurrencyFomatter.swift in Sources */,
 				B6A3998221F1E5C500731CB1 /* UIAlertControllerExtensions.swift in Sources */,
-				B6A3996321F1D1E300731CB1 /* LoadingView.swift in Sources */,
 				B654E93A215D230E00A24BD3 /* RequestProtocol.swift in Sources */,
+				B6A3998721F1E93900731CB1 /* LoadingView.swift in Sources */,
 				B653E08C215FDCD8004508BF /* RequestManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
