@@ -8,12 +8,13 @@
 
 import UIKit
 
-class RatesTVC: UIViewController {
+class RatesTVC: UIViewController, LoadingViewController {
     var presenter: RatesPresenterProtocol
     
     // Outlets
     public var tableView = UITableView(frame: .zero, style: .grouped)
     var refreshControl = UIRefreshControl()
+    var loadingView: LoadingView = LoadingView(frame: .zero)
     
     // MARK: - Layout
     private enum Layout {
@@ -60,17 +61,22 @@ class RatesTVC: UIViewController {
         tableView.dataSource = self
         tableView.allowsSelection = false
         tableView.register(HistoricalRateCell.self, forCellReuseIdentifier: HistoricalRateCell.identifier)
+        tableView.addSubview(refreshControl)
         view.addSubview(tableView)
         tableView.autoPinEdges(to: view)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshControl.beginRefreshing()
         presenter.viewDidLoad()
         
         refreshControl.addTarget(self, action: #selector(RatesTVC.handleRefresh(refreshControl:)),
                                        for: UIControlEvents.valueChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        beginLoading()
     }
 
     @objc func handleRefresh(refreshControl: UIRefreshControl) {
@@ -116,6 +122,7 @@ extension RatesTVC: RatesViewInterface {
     
     func viewShouldUpdateHistorical(with viewModel: HistoricalRatesViewModel) {
         refreshControl.endRefreshing()
+        endLoading()
         self.historicalViewModel = viewModel
         tableView.reloadData()
     }
@@ -139,6 +146,6 @@ extension RatesTVC: RatesViewInterface {
     }
     
     func showError(message: String) {
-        // TODO: Show error
+        UIAlertController.show(title: RatesLocalizedResources.Strings.errorTitle, message: message, in: self)
     }
 }
