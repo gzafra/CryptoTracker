@@ -1,6 +1,6 @@
 # CryptoTracker
 
-iOS test project that retrieves BTC rates from CoinDesk API and displays it on an iOS app and a Watch companion.
+iOS test project that retrieves BTC rates from CoinDesk API and displays it on an iOS app and a Watch companion. Project also includes a TodayExtension.
 
 ## Summary
 
@@ -29,6 +29,8 @@ NOTE: I had no previous experience with WatchKit apps nor Today Extension so for
 There are several TODO's in the project about things that should be reworked next. 
 
 - Refactor UI to adapt to different devices (especially the Watch)
+
 - Move hardcoded config values (URL's, Endpoints) to config plist file.
+
 - Workout failure cases, retries and recovery.
 
