@@ -71,7 +71,7 @@ class RatesRemoteInteractor: RatesRemoteInteractorProtocol {
     /// Fetches Historical Data from remote
     func fetchHistoricalData(successBlock: @escaping HistoricalDataBlock, failureBlock: @escaping ()->()) {
         guard let twoWeeksSinceNow = Calendar.current.date(byAdding: .day, value: -14, to: Date()) else { return }
-        var historicalRequest = RatesHistoricalRequest(from: twoWeeksSinceNow, currency: "EUR")
+        var historicalRequest = RatesHistoricalRequest(from: twoWeeksSinceNow, currency: AppConstants.defaultCurrency)
         historicalRequest.completion = { result in
             switch result {
             case .success(let data):

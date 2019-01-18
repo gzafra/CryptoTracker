@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             assertionFailure("Could not load initial ViewController")
             return
         }
-//        window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController(rootViewController: initialVC)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

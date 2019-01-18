@@ -30,7 +30,7 @@ class RatesTVC: UIViewController {
     private lazy var headerView: UIView = {
         let view = UIView()
         headerTitle.textAlignment = .center
-        headerTitle.text = "Loading..."
+        headerTitle.text = RatesLocalizedResources.Strings.loading
         view.addSubview(headerTitle)
         headerTitle.translatesAutoresizingMaskIntoConstraints = false
         headerTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -51,6 +51,7 @@ class RatesTVC: UIViewController {
     
     func commonInit() {
         view.backgroundColor = .white
+        title = RatesLocalizedResources.Strings.title
         setupTableView()
     }
     

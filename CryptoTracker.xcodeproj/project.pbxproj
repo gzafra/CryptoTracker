@@ -13,7 +13,6 @@
 		B606D10E21EDFE760072FFDB /* HtmlDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B606D10B21EDFDA80072FFDB /* HtmlDecoder.swift */; };
 		B653E084215FBA73004508BF /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E083215FBA73004508BF /* CacheManager.swift */; };
 		B653E086215FC10A004508BF /* RatesLocalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E085215FC10A004508BF /* RatesLocalInteractor.swift */; };
-		B653E088215FC8C0004508BF /* RatesLocalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E085215FC10A004508BF /* RatesLocalInteractor.swift */; };
 		B653E089215FC8CD004508BF /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E083215FBA73004508BF /* CacheManager.swift */; };
 		B653E08C215FDCD8004508BF /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */; };
 		B653E08D215FDD1F004508BF /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653E08B215FDCD8004508BF /* RequestManagerProtocol.swift */; };
@@ -34,8 +33,7 @@
 		B654E94C215D45C600A24BD3 /* RatesRealTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */; };
 		B654E94F215D47BA00A24BD3 /* RatesHistoricalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */; };
 		B654E951215D47D400A24BD3 /* RatesHistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */; };
-		B654E955215D498600A24BD3 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateExtensions.swift */; };
-		B654E957215D4D4200A24BD3 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
+		B654E955215D498600A24BD3 /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateFormatterHelper.swift */; };
 		B654E95A215D528300A24BD3 /* RatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E959215D528300A24BD3 /* RatesTVC.swift */; };
 		B654E95C215D53C500A24BD3 /* HistorialRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E95B215D53C500A24BD3 /* HistorialRateCell.swift */; };
 		B654E95F215D53FB00A24BD3 /* RatesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E95E215D53FB00A24BD3 /* RatesPresenter.swift */; };
@@ -54,11 +52,10 @@
 		B654E996215F750600A24BD3 /* CoinDeskEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */; };
 		B654E997215F750600A24BD3 /* RatesRealTimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E949215D457400A24BD3 /* RatesRealTimeRequest.swift */; };
 		B654E998215F750600A24BD3 /* RatesHistoricalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */; };
-		B654E999215F750600A24BD3 /* RatesRemoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */; };
 		B654E99A215F750600A24BD3 /* RatesRealTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */; };
 		B654E99B215F750600A24BD3 /* RatesHistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */; };
 		B654E99C215F751000A24BD3 /* CurrencyFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */; };
-		B654E99D215F751000A24BD3 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateExtensions.swift */; };
+		B654E99D215F751000A24BD3 /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateFormatterHelper.swift */; };
 		B654E99F215F751600A24BD3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E937215D22A600A24BD3 /* Result.swift */; };
 		B654E9A0215F751600A24BD3 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E939215D230E00A24BD3 /* RequestProtocol.swift */; };
 		B654E9A1215F751600A24BD3 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E93B215D244A00A24BD3 /* RequestManager.swift */; };
@@ -75,14 +72,11 @@
 		B65E7EAD216010DF00C05513 /* MockViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAC216010DF00C05513 /* MockViewInterface.swift */; };
 		B65E7EAF21601FBE00C05513 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */; };
 		B65E7EB12160229D00C05513 /* RatesTVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EB02160229D00C05513 /* RatesTVCTests.swift */; };
-		B65E7EB22160250F00C05513 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
 		B65E7EB42160259700C05513 /* MockRatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EB32160259700C05513 /* MockRatesRouter.swift */; };
 		B65E7EBD2160D12F00C05513 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65E7EBC2160D12F00C05513 /* NotificationCenter.framework */; };
 		B65E7EC02160D12F00C05513 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E7EBF2160D12F00C05513 /* TodayViewController.swift */; };
 		B65E7EC32160D12F00C05513 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65E7EC12160D12F00C05513 /* MainInterface.storyboard */; };
 		B65E7EC72160D12F00C05513 /* CTWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B65E7EBA2160D12F00C05513 /* CTWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B65E7ECC2160DAF800C05513 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
-		B65E7ECD2160DAFF00C05513 /* RatesRemoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */; };
 		B65E7ECE2160DB6900C05513 /* RatesRealTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */; };
 		B65E7ECF2160DB6900C05513 /* RatesHistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */; };
 		B65E7ED02160DB7300C05513 /* CoinDeskEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */; };
@@ -96,8 +90,20 @@
 		B65E7ED82160DB8300C05513 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E943215D2AB200A24BD3 /* ResultError.swift */; };
 		B65E7ED92160DB8300C05513 /* HTTPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E945215D2FB700A24BD3 /* HTTPCode.swift */; };
 		B65E7EDA2160DBA000C05513 /* CurrencyFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */; };
-		B65E7EDB2160DBBF00C05513 /* RatesViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E960215D540D00A24BD3 /* RatesViewModels.swift */; };
-		B65E7EDC2160DBC900C05513 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateExtensions.swift */; };
+		B65E7EDC2160DBC900C05513 /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E954215D498600A24BD3 /* DateFormatterHelper.swift */; };
+		B6A3995A21F1CCC900731CB1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995921F1CCC900731CB1 /* AppConstants.swift */; };
+		B6A3995B21F1CE7B00731CB1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995921F1CCC900731CB1 /* AppConstants.swift */; };
+		B6A3995C21F1CE7C00731CB1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995921F1CCC900731CB1 /* AppConstants.swift */; };
+		B6A3996221F1D1E300731CB1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A3996021F1D1E300731CB1 /* LoadingView.xib */; };
+		B6A3996321F1D1E300731CB1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3996121F1D1E300731CB1 /* LoadingView.swift */; };
+		B6A3996E21F1D35300731CB1 /* RatesLocalizedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995D21F1D0C800731CB1 /* RatesLocalizedResources.swift */; };
+		B6A3997421F1D4BC00731CB1 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
+		B6A3997521F1D4BE00731CB1 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
+		B6A3997721F1D50600731CB1 /* RatesLocalizedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3995D21F1D0C800731CB1 /* RatesLocalizedResources.swift */; };
+		B6A3997821F1D51100731CB1 /* RatesRemoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */; };
+		B6A3997921F1D54E00731CB1 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E956215D4D4200A24BD3 /* RatesProtocols.swift */; };
+		B6A3997A21F1D55400731CB1 /* RatesRemoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */; };
+		B6A3997B21F1D55E00731CB1 /* RatesViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654E960215D540D00A24BD3 /* RatesViewModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,7 +200,7 @@
 		B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRealTimeData.swift; sourceTree = "<group>"; };
 		B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesHistoricalRequest.swift; sourceTree = "<group>"; };
 		B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesHistoricalData.swift; sourceTree = "<group>"; };
-		B654E954215D498600A24BD3 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		B654E954215D498600A24BD3 /* DateFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHelper.swift; sourceTree = "<group>"; };
 		B654E956215D4D4200A24BD3 /* RatesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesProtocols.swift; sourceTree = "<group>"; };
 		B654E959215D528300A24BD3 /* RatesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTVC.swift; sourceTree = "<group>"; };
 		B654E95B215D53C500A24BD3 /* HistorialRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialRateCell.swift; sourceTree = "<group>"; };
@@ -228,6 +234,10 @@
 		B65E7EBF2160D12F00C05513 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		B65E7EC22160D12F00C05513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		B65E7EC42160D12F00C05513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6A3995921F1CCC900731CB1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		B6A3995D21F1D0C800731CB1 /* RatesLocalizedResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalizedResources.swift; sourceTree = "<group>"; };
+		B6A3996021F1D1E300731CB1 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		B6A3996121F1D1E300731CB1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,15 +273,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B653E087215FC11C004508BF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */,
-				B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		B653E08A215FDCC8004508BF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,9 +319,10 @@
 		B654E915215D1E6C00A24BD3 /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B6A3996621F1D24F00731CB1 /* Data */,
+				B6A3996521F1D24800731CB1 /* Domain */,
+				B6A3996421F1D23400731CB1 /* Presentation */,
 				B654E968215D6C2C00A24BD3 /* Resources */,
-				B654E952215D497000A24BD3 /* Common */,
-				B654E93F215D25FF00A24BD3 /* RatesModule */,
 				B654E916215D1E6C00A24BD3 /* AppDelegate.swift */,
 				B654E922215D1E6E00A24BD3 /* Info.plist */,
 			);
@@ -340,99 +342,6 @@
 				B65E7EB02160229D00C05513 /* RatesTVCTests.swift */,
 			);
 			path = CryptoTrackerTests;
-			sourceTree = "<group>";
-		};
-		B654E936215D1FE300A24BD3 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				B653E08A215FDCC8004508BF /* Protocols */,
-				B654E937215D22A600A24BD3 /* Result.swift */,
-				B654E93B215D244A00A24BD3 /* RequestManager.swift */,
-				B654E93D215D247300A24BD3 /* EndpointProtocol.swift */,
-				B654E943215D2AB200A24BD3 /* ResultError.swift */,
-				B654E945215D2FB700A24BD3 /* HTTPCode.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		B654E93F215D25FF00A24BD3 /* RatesModule */ = {
-			isa = PBXGroup;
-			children = (
-				B654E966215D6BCC00A24BD3 /* RatesRouter.swift */,
-				B654E956215D4D4200A24BD3 /* RatesProtocols.swift */,
-				B654E95D215D53E900A24BD3 /* Presenter */,
-				B654E958215D524D00A24BD3 /* ViewInterface */,
-				B654E940215D260A00A24BD3 /* Interactor */,
-			);
-			path = RatesModule;
-			sourceTree = "<group>";
-		};
-		B654E940215D260A00A24BD3 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				B653E087215FC11C004508BF /* Model */,
-				B654E94D215D479800A24BD3 /* Network */,
-				B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */,
-				B653E085215FC10A004508BF /* RatesLocalInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B654E94D215D479800A24BD3 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */,
-				B654E949215D457400A24BD3 /* RatesRealTimeRequest.swift */,
-				B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		B654E952215D497000A24BD3 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B6D2A99C21A80AE500DA8F82 /* Cache */,
-				B654E962215D5FD400A24BD3 /* Helpers */,
-				B654E953215D497A00A24BD3 /* Extensions */,
-				B654E936215D1FE300A24BD3 /* Network */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		B654E953215D497A00A24BD3 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B654E954215D498600A24BD3 /* DateExtensions.swift */,
-				B606D10921EDE9B60072FFDB /* UIViewExtensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B654E958215D524D00A24BD3 /* ViewInterface */ = {
-			isa = PBXGroup;
-			children = (
-				B654E959215D528300A24BD3 /* RatesTVC.swift */,
-				B654E95B215D53C500A24BD3 /* HistorialRateCell.swift */,
-			);
-			path = ViewInterface;
-			sourceTree = "<group>";
-		};
-		B654E95D215D53E900A24BD3 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				B654E95E215D53FB00A24BD3 /* RatesPresenter.swift */,
-				B654E960215D540D00A24BD3 /* RatesViewModels.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B654E962215D5FD400A24BD3 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */,
-				B606D10B21EDFDA80072FFDB /* HtmlDecoder.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B654E968215D6C2C00A24BD3 /* Resources */ = {
@@ -527,6 +436,135 @@
 				B65E7EC42160D12F00C05513 /* Info.plist */,
 			);
 			path = CTWidget;
+			sourceTree = "<group>";
+		};
+		B6A3995F21F1D1E300731CB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3996021F1D1E300731CB1 /* LoadingView.xib */,
+				B6A3996121F1D1E300731CB1 /* LoadingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6A3996421F1D23400731CB1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3996F21F1D39F00731CB1 /* Shared */,
+				B6A3996B21F1D2BB00731CB1 /* BTCRates */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B6A3996521F1D24800731CB1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3997221F1D3EA00731CB1 /* Shared */,
+				B6A3996A21F1D2B500731CB1 /* BTCRates */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B6A3996621F1D24F00731CB1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3996821F1D26200731CB1 /* Network */,
+				B6A3996721F1D25B00731CB1 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B6A3996721F1D25B00731CB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B654E94B215D45C600A24BD3 /* RatesRealTimeData.swift */,
+				B654E950215D47D400A24BD3 /* RatesHistoricalData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B6A3996821F1D26200731CB1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B654E941215D261E00A24BD3 /* CoinDeskEndpoints.swift */,
+				B654E949215D457400A24BD3 /* RatesRealTimeRequest.swift */,
+				B654E94E215D47BA00A24BD3 /* RatesHistoricalRequest.swift */,
+				B6A3996921F1D26A00731CB1 /* Common */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B6A3996921F1D26A00731CB1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B653E08A215FDCC8004508BF /* Protocols */,
+				B654E937215D22A600A24BD3 /* Result.swift */,
+				B654E93B215D244A00A24BD3 /* RequestManager.swift */,
+				B654E93D215D247300A24BD3 /* EndpointProtocol.swift */,
+				B654E943215D2AB200A24BD3 /* ResultError.swift */,
+				B654E945215D2FB700A24BD3 /* HTTPCode.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B6A3996A21F1D2B500731CB1 /* BTCRates */ = {
+			isa = PBXGroup;
+			children = (
+				B654E947215D33C900A24BD3 /* RatesRemoteInteractor.swift */,
+				B653E085215FC10A004508BF /* RatesLocalInteractor.swift */,
+				B654E956215D4D4200A24BD3 /* RatesProtocols.swift */,
+				B654E966215D6BCC00A24BD3 /* RatesRouter.swift */,
+			);
+			path = BTCRates;
+			sourceTree = "<group>";
+		};
+		B6A3996B21F1D2BB00731CB1 /* BTCRates */ = {
+			isa = PBXGroup;
+			children = (
+				B654E95E215D53FB00A24BD3 /* RatesPresenter.swift */,
+				B654E959215D528300A24BD3 /* RatesTVC.swift */,
+				B654E95B215D53C500A24BD3 /* HistorialRateCell.swift */,
+				B654E960215D540D00A24BD3 /* RatesViewModels.swift */,
+				B6A3995D21F1D0C800731CB1 /* RatesLocalizedResources.swift */,
+			);
+			path = BTCRates;
+			sourceTree = "<group>";
+		};
+		B6A3996F21F1D39F00731CB1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3997121F1D3D900731CB1 /* Formatters */,
+				B6A3997021F1D3B800731CB1 /* Layout */,
+				B6A3995F21F1D1E300731CB1 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B6A3997021F1D3B800731CB1 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				B606D10921EDE9B60072FFDB /* UIViewExtensions.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		B6A3997121F1D3D900731CB1 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				B654E954215D498600A24BD3 /* DateFormatterHelper.swift */,
+				B654E963215D5FE000A24BD3 /* CurrencyFomatter.swift */,
+				B606D10B21EDFDA80072FFDB /* HtmlDecoder.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		B6A3997221F1D3EA00731CB1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3995921F1CCC900731CB1 /* AppConstants.swift */,
+				B6D2A99C21A80AE500DA8F82 /* Cache */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		B6D2A99C21A80AE500DA8F82 /* Cache */ = {
@@ -685,6 +723,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A3996221F1D1E300731CB1 /* LoadingView.xib in Resources */,
 				B654E921215D1E6E00A24BD3 /* LaunchScreen.storyboard in Resources */,
 				B654E91E215D1E6E00A24BD3 /* Assets.xcassets in Resources */,
 			);
@@ -738,6 +777,7 @@
 				B653E084215FBA73004508BF /* CacheManager.swift in Sources */,
 				B654E938215D22A600A24BD3 /* Result.swift in Sources */,
 				B654E95F215D53FB00A24BD3 /* RatesPresenter.swift in Sources */,
+				B6A3997721F1D50600731CB1 /* RatesLocalizedResources.swift in Sources */,
 				B654E942215D261E00A24BD3 /* CoinDeskEndpoints.swift in Sources */,
 				B606D10C21EDFDA80072FFDB /* HtmlDecoder.swift in Sources */,
 				B654E95C215D53C500A24BD3 /* HistorialRateCell.swift in Sources */,
@@ -745,16 +785,18 @@
 				B654E94A215D457400A24BD3 /* RatesRealTimeRequest.swift in Sources */,
 				B654E961215D540D00A24BD3 /* RatesViewModels.swift in Sources */,
 				B654E948215D33C900A24BD3 /* RatesRemoteInteractor.swift in Sources */,
-				B654E957215D4D4200A24BD3 /* RatesProtocols.swift in Sources */,
 				B654E967215D6BCC00A24BD3 /* RatesRouter.swift in Sources */,
 				B606D10A21EDE9B60072FFDB /* UIViewExtensions.swift in Sources */,
 				B654E951215D47D400A24BD3 /* RatesHistoricalData.swift in Sources */,
 				B654E94C215D45C600A24BD3 /* RatesRealTimeData.swift in Sources */,
+				B6A3995A21F1CCC900731CB1 /* AppConstants.swift in Sources */,
+				B6A3997421F1D4BC00731CB1 /* RatesProtocols.swift in Sources */,
 				B654E917215D1E6C00A24BD3 /* AppDelegate.swift in Sources */,
-				B654E955215D498600A24BD3 /* DateExtensions.swift in Sources */,
+				B654E955215D498600A24BD3 /* DateFormatterHelper.swift in Sources */,
 				B654E944215D2AB200A24BD3 /* ResultError.swift in Sources */,
 				B654E93E215D247300A24BD3 /* EndpointProtocol.swift in Sources */,
 				B654E964215D5FE000A24BD3 /* CurrencyFomatter.swift in Sources */,
+				B6A3996321F1D1E300731CB1 /* LoadingView.swift in Sources */,
 				B654E93A215D230E00A24BD3 /* RequestProtocol.swift in Sources */,
 				B653E08C215FDCD8004508BF /* RequestManagerProtocol.swift in Sources */,
 			);
@@ -784,25 +826,26 @@
 				B654E9A1215F751600A24BD3 /* RequestManager.swift in Sources */,
 				B654E996215F750600A24BD3 /* CoinDeskEndpoints.swift in Sources */,
 				B653E089215FC8CD004508BF /* CacheManager.swift in Sources */,
+				B6A3997521F1D4BE00731CB1 /* RatesProtocols.swift in Sources */,
 				B654E9A6215F761500A24BD3 /* RatesPresenter.swift in Sources */,
 				B654E998215F750600A24BD3 /* RatesHistoricalRequest.swift in Sources */,
 				B654E99B215F750600A24BD3 /* RatesHistoricalData.swift in Sources */,
-				B654E999215F750600A24BD3 /* RatesRemoteInteractor.swift in Sources */,
 				B654E99A215F750600A24BD3 /* RatesRealTimeData.swift in Sources */,
 				B654E99F215F751600A24BD3 /* Result.swift in Sources */,
 				B654E99C215F751000A24BD3 /* CurrencyFomatter.swift in Sources */,
 				B654E981215F6C2C00A24BD3 /* ExtensionDelegate.swift in Sources */,
 				B654E995215F719500A24BD3 /* RatesViewModels.swift in Sources */,
 				B654E997215F750600A24BD3 /* RatesRealTimeRequest.swift in Sources */,
+				B6A3997821F1D51100731CB1 /* RatesRemoteInteractor.swift in Sources */,
+				B6A3996E21F1D35300731CB1 /* RatesLocalizedResources.swift in Sources */,
 				B654E9A2215F751600A24BD3 /* EndpointProtocol.swift in Sources */,
 				B654E9A3215F751600A24BD3 /* ResultError.swift in Sources */,
 				B654E9A0215F751600A24BD3 /* RequestProtocol.swift in Sources */,
 				B654E9A4215F751600A24BD3 /* HTTPCode.swift in Sources */,
 				B654E994215F715200A24BD3 /* RateRowController.swift in Sources */,
 				B654E97F215F6C2C00A24BD3 /* WatchRatesController.swift in Sources */,
-				B65E7EB22160250F00C05513 /* RatesProtocols.swift in Sources */,
-				B653E088215FC8C0004508BF /* RatesLocalInteractor.swift in Sources */,
-				B654E99D215F751000A24BD3 /* DateExtensions.swift in Sources */,
+				B6A3995B21F1CE7B00731CB1 /* AppConstants.swift in Sources */,
+				B654E99D215F751000A24BD3 /* DateFormatterHelper.swift in Sources */,
 				B653E08D215FDD1F004508BF /* RequestManagerProtocol.swift in Sources */,
 				B606D10D21EDFE750072FFDB /* HtmlDecoder.swift in Sources */,
 			);
@@ -813,24 +856,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65E7ED32160DB7C00C05513 /* RequestProtocol.swift in Sources */,
+				B6A3997921F1D54E00731CB1 /* RatesProtocols.swift in Sources */,
+				B6A3997B21F1D55E00731CB1 /* RatesViewModels.swift in Sources */,
 				B65E7ED92160DB8300C05513 /* HTTPCode.swift in Sources */,
 				B606D10E21EDFE760072FFDB /* HtmlDecoder.swift in Sources */,
 				B65E7ED02160DB7300C05513 /* CoinDeskEndpoints.swift in Sources */,
 				B65E7ED72160DB8300C05513 /* EndpointProtocol.swift in Sources */,
 				B65E7ED82160DB8300C05513 /* ResultError.swift in Sources */,
-				B65E7EDC2160DBC900C05513 /* DateExtensions.swift in Sources */,
+				B65E7EDC2160DBC900C05513 /* DateFormatterHelper.swift in Sources */,
 				B65E7ED22160DB7300C05513 /* RatesHistoricalRequest.swift in Sources */,
 				B65E7ED62160DB8300C05513 /* RequestManager.swift in Sources */,
 				B65E7ECF2160DB6900C05513 /* RatesHistoricalData.swift in Sources */,
 				B65E7EC02160D12F00C05513 /* TodayViewController.swift in Sources */,
-				B65E7ECD2160DAFF00C05513 /* RatesRemoteInteractor.swift in Sources */,
 				B65E7ED12160DB7300C05513 /* RatesRealTimeRequest.swift in Sources */,
 				B65E7ECE2160DB6900C05513 /* RatesRealTimeData.swift in Sources */,
-				B65E7ECC2160DAF800C05513 /* RatesProtocols.swift in Sources */,
 				B65E7ED42160DB7C00C05513 /* RequestManagerProtocol.swift in Sources */,
+				B6A3997A21F1D55400731CB1 /* RatesRemoteInteractor.swift in Sources */,
 				B65E7EDA2160DBA000C05513 /* CurrencyFomatter.swift in Sources */,
 				B65E7ED52160DB8300C05513 /* Result.swift in Sources */,
-				B65E7EDB2160DBBF00C05513 /* RatesViewModels.swift in Sources */,
+				B6A3995C21F1CE7C00731CB1 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

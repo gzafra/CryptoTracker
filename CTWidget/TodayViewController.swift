@@ -30,8 +30,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         interactor?.fetchRealTimeData(successBlock: { [weak self] (data) in
-            guard let rate = data.defaultCurrency?.rate, let symbol = data.defaultCurrency?.symbol else { return }
-            self?.priceLabel.text = CurrencyFormatter.format(rate: rate, currencySymbol: HtmlDecoder.decode(string: symbol) )
+            guard let rate = data.defaultCurrency?.rate else { return }
+            self?.priceLabel.text = CurrencyFormatter.format(rate: rate, currencyCode: AppConstants.defaultCurrency )
         }, failureBlock: { [weak self] in
             self?.priceLabel.text = "--" // TODO: Should probably allow to retry manually
         })

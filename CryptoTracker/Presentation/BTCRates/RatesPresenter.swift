@@ -10,13 +10,6 @@ import Foundation
 
 final class RatesPresenter: RatesPresenterProtocol {
   
-    private enum Constants {
-        static let defaultCurrencySymbol = "€"
-        enum Strings {
-            static let errorMessage = "Something went wrong..."
-            static let nowTitle = "NOW"
-        }
-    }
     var remoteInteractor: RatesRemoteInteractorProtocol
     var localInteractor: RatesLocalInteractorProtocol?
     
@@ -34,9 +27,9 @@ final class RatesPresenter: RatesPresenterProtocol {
         }
         if let realTime = localInteractor?.fetchLocalRealTimeRate(),
             let defaultCurrency = realTime.defaultCurrency {
-            self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: Constants.Strings.nowTitle,
+            self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: RatesLocalizedResources.Strings.now,
                                                                              stringRate: CurrencyFormatter.format(rate: defaultCurrency.rate,
-                                                                                                                  currencySymbol: HtmlDecoder.decode(string: defaultCurrency.symbol) )))
+                                                                                                                  currencyCode: AppConstants.defaultCurrency )))
         }
         
         // Retrieve remote data
@@ -50,7 +43,7 @@ final class RatesPresenter: RatesPresenterProtocol {
             let viewModel = HistoricalRatesViewModel(historialRates: self.generateHistoricalRatesViewModel(for: historicalData))
             self.viewInterface?.viewShouldUpdateHistorical(with: viewModel)
         }, failureBlock: {
-            self.viewInterface?.showError(message: Constants.Strings.errorMessage)
+            self.viewInterface?.showError(message: RatesLocalizedResources.Strings.genericError)
         })
     }
     
@@ -58,7 +51,7 @@ final class RatesPresenter: RatesPresenterProtocol {
         return data.days.map{ key, value in
             return RateViewModel(stringTitle: key,
                                  stringRate: CurrencyFormatter.format(rate: value,
-                                                                      currencySymbol: Constants.defaultCurrencySymbol)) // TODO: Should be dynamic
+                                                                      currencyCode: AppConstants.defaultCurrency))
             }.sorted{
                 $0.stringTitle > $1.stringTitle // Because it comes in a dictionary, we need to sort it by title (date)
         }
@@ -69,9 +62,9 @@ extension RatesPresenter: RatesInteractorDelegate {
     func didUpdate(realTimeData: RatesRealTimeData) {
         self.localInteractor?.save(realTimeRate: realTimeData)
         guard let currency = realTimeData.defaultCurrency else { return }
-        self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: Constants.Strings.nowTitle,
+        self.viewInterface?.viewShouldUpdateRealTime(with: RateViewModel(stringTitle: RatesLocalizedResources.Strings.now,
                                                                          stringRate: CurrencyFormatter.format(rate: currency.rate,
-                                                                                                              currencySymbol: HtmlDecoder.decode(string: currency.symbol) )))
+                                                                                                              currencyCode: AppConstants.defaultCurrency )))
     }
     
     

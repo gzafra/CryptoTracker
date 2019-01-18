@@ -11,15 +11,10 @@ import Foundation
 struct RatesRealTimeData: Codable {
     let chartName: String
     let currencies: [String: CoinDeskRealTimeCurrency]
-    
-    private enum Constants {
-        static let usdCurrencyCode = "USD"
-        static let eurCurrencycode = "EUR"
-    }
 
-    /// The default currency, currently EUR. TODO: Should be set in config
+    /// The default currency, currently EUR. TODO: Should be set in config or be able to select in runtime
     var defaultCurrency: CoinDeskRealTimeCurrency? {
-        guard let currency = currencies[Constants.eurCurrencycode] else { return nil }
+        guard let currency = currencies[AppConstants.defaultCurrency] else { return nil }
         return currency
     }
     
