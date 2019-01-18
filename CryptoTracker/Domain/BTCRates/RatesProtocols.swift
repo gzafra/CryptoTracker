@@ -26,7 +26,7 @@ protocol RatesInteractorDelegate: class {
 }
 
 protocol RatesPresenterProtocol: class {
-    var remoteInteractor: RatesRemoteInteractorProtocol { get }
+    var remoteInteractor: RatesRemoteInteractorProtocol { get set }
     var localInteractor: RatesLocalInteractorProtocol? { get set }
     func viewDidLoad()
     func viewNeedsUpdatedData()

@@ -11,13 +11,6 @@ import XCTest
 
 class LocalInteractorTests: XCTestCase {
     
-    func testDeleteCache() {
-        let localInteractor = RatesLocalInteractor()
-        localInteractor.deleteCache()
-        
-        let cachedData = localInteractor.fetchLocalHistorical()
-        XCTAssertNil(cachedData)
-    }
     
     func testHistoricalCache() {
         let localInteractor = RatesLocalInteractor()

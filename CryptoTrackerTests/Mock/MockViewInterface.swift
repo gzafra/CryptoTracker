@@ -10,7 +10,11 @@ import Foundation
 @testable import CryptoTracker
 
 class MockViewInterface: RatesViewInterface {
-    var presenter: RatesPresenterProtocol?
+    var presenter: RatesPresenterProtocol
+    
+    init(presenter: RatesPresenterProtocol) {
+        self.presenter = presenter
+    }
     
     var historicalViewModel: HistoricalRatesViewModel?
     var realtimeViewModel: RateViewModel?

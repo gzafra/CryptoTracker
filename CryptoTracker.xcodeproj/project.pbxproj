@@ -332,14 +332,11 @@
 		B654E92A215D1E6E00A24BD3 /* CryptoTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				B6A3997C21F1D71000731CB1 /* BTCRates */,
 				B65E7EA921600F9200C05513 /* Mock */,
 				B654E92D215D1E6E00A24BD3 /* Info.plist */,
 				B653E090215FE6C4004508BF /* Helpers */,
-				B654E92B215D1E6E00A24BD3 /* RemoteInteractorTests.swift */,
-				B65E7EA521600ADC00C05513 /* LocalInteractorTests.swift */,
-				B65E7EA721600F7200C05513 /* RatesModuleTests.swift */,
 				B65E7EAE21601FBE00C05513 /* ExtensionTests.swift */,
-				B65E7EB02160229D00C05513 /* RatesTVCTests.swift */,
 			);
 			path = CryptoTrackerTests;
 			sourceTree = "<group>";
@@ -565,6 +562,17 @@
 				B6D2A99C21A80AE500DA8F82 /* Cache */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		B6A3997C21F1D71000731CB1 /* BTCRates */ = {
+			isa = PBXGroup;
+			children = (
+				B654E92B215D1E6E00A24BD3 /* RemoteInteractorTests.swift */,
+				B65E7EA521600ADC00C05513 /* LocalInteractorTests.swift */,
+				B65E7EA721600F7200C05513 /* RatesModuleTests.swift */,
+				B65E7EB02160229D00C05513 /* RatesTVCTests.swift */,
+			);
+			path = BTCRates;
 			sourceTree = "<group>";
 		};
 		B6D2A99C21A80AE500DA8F82 /* Cache */ = {

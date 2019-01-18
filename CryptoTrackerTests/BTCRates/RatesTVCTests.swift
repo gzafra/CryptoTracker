@@ -23,8 +23,7 @@ class RatesTVCTests: XCTestCase {
             return
         }
         XCTAssertNotNil(ratesTvc.presenter)
-        XCTAssertNotNil(ratesTvc.presenter?.localInteractor)
-        XCTAssertNotNil(ratesTvc.presenter?.remoteInteractor)
+        XCTAssertNotNil(ratesTvc.presenter.localInteractor)
         
     }
     
@@ -36,7 +35,7 @@ class RatesTVCTests: XCTestCase {
         }
         
         let mockInteractor = RatesRemoteInteractor(requestManager: MockRequestManager(promiseJson: MockRequestManagerPromises.historicalJson))
-        ratesTvc.presenter?.remoteInteractor = mockInteractor
+        ratesTvc.presenter.remoteInteractor = mockInteractor
  
         ratesTvc.viewDidLoad()
         

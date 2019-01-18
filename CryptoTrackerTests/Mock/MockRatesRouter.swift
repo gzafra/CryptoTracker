@@ -11,37 +11,34 @@ import UIKit
 
 class MockRatesRouter: RatesRouterProtocol {
     static func setupModule() -> RatesViewInterface {
-        let ratesTVC = MockViewInterface()
-        return ratesTVC
+        fatalError("Not implemented")
     }
     
     static func setupModuleToTestHistorical() -> RatesViewInterface {
-        let ratesTVC = setupModule()
-        
-        let presenter = RatesPresenter()
         let remoteInteractor = RatesRemoteInteractor(requestManager: MockRequestManager(promiseJson: MockRequestManagerPromises.historicalJson))
+        let presenter = RatesPresenter(remoteInteractor: remoteInteractor)
+        let ratesTVC = RatesTVC(presenter: presenter)
+        
         let localInteractor = RatesLocalInteractor()
         
         // Setup
         ratesTVC.presenter = presenter
         remoteInteractor.delegate = presenter
-        presenter.remoteInteractor = remoteInteractor
         presenter.localInteractor = localInteractor
         presenter.viewInterface = ratesTVC
         return ratesTVC
     }
 
     static func setupModuleToTestRealTime() -> RatesViewInterface {
-        let ratesTVC = setupModule()
-        
-        let presenter = RatesPresenter()
         let remoteInteractor = RatesRemoteInteractor(requestManager: MockRequestManager(promiseJson: MockRequestManagerPromises.realTimeJson))
+        let presenter = RatesPresenter(remoteInteractor: remoteInteractor)
+        let ratesTVC = RatesTVC(presenter: presenter)
+        
         let localInteractor = RatesLocalInteractor()
         
         // Setup
         ratesTVC.presenter = presenter
         remoteInteractor.delegate = presenter
-        presenter.remoteInteractor = remoteInteractor
         presenter.localInteractor = localInteractor
         presenter.viewInterface = ratesTVC
         return ratesTVC
