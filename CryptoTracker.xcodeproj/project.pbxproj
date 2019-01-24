@@ -469,6 +469,7 @@
 		B6A3996621F1D24F00731CB1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B6D2A99C21A80AE500DA8F82 /* Cache */,
 				B6A3996821F1D26200731CB1 /* Network */,
 				B6A3996721F1D25B00731CB1 /* Model */,
 			);
@@ -563,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				B6A3995921F1CCC900731CB1 /* AppConstants.swift */,
-				B6D2A99C21A80AE500DA8F82 /* Cache */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
